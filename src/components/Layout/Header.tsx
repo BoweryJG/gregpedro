@@ -29,6 +29,7 @@ const Header: React.FC = () => {
   const menuItems = [
     { text: 'Home', path: '/' },
     { text: 'Services', path: '/services' },
+    { text: 'Yomi Technology', path: '/yomi-technology' },
     { text: 'Treatment Options', path: '/treatment-options' },
     { text: 'About', path: '/about' },
     { text: 'Patient Resources', path: '/resources' },

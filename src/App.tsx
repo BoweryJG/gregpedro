@@ -10,6 +10,7 @@ import Layout from './components/Layout/Layout';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
+import YomiTechnologyPage from './pages/YomiTechnologyPage';
 
 // AI Components
 import ChatBot from './components/AI/ChatBot';
@@ -24,6 +25,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/yomi-technology" element={<YomiTechnologyPage />} />
             {/* Add more routes as needed */}
             <Route path="*" element={<HomePage />} />
           </Routes>

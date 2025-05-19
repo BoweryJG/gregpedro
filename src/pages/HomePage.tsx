@@ -7,8 +7,17 @@ import {
   Button, 
   Card, 
   CardContent,
-  useTheme
+  useTheme,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Divider
 } from '@mui/material';
+import {
+  Check as CheckIcon,
+  ArrowForward as ArrowForwardIcon
+} from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import HeroSection from '../components/UI/HeroSection';
 import ServiceCard from '../components/UI/ServiceCard';
@@ -71,13 +80,50 @@ const HomePage: React.FC = () => {
   return (
     <Box>
       {/* Hero Section */}
-      <HeroSection
-        title="TRANSFORMING SMILES, CHANGING LIVES"
-        subtitle="DR. GREG PEDRO: STATEN ISLAND'S PREMIER IMPLANT SPECIALIST | Where Artistry Meets Advanced Dental Science"
-        ctaText="Begin Your Smile Journey"
-        ctaLink="/contact"
-        backgroundImage="/images/hero-background.jpg"
-      />
+      <Box
+        sx={{
+          position: 'relative',
+          height: '100vh',
+          minHeight: '600px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: 'black',
+          color: 'white',
+          textAlign: 'center',
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/hero-background.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <Container maxWidth="md">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Typography variant="h1" component="h1" gutterBottom>
+              DR. GREG PEDRO
+            </Typography>
+            <Typography variant="h4" gutterBottom>
+              PROSTHODONTIST & DENTAL IMPLANT SPECIALIST
+            </Typography>
+            <Box sx={{ display: 'inline-block', bgcolor: 'secondary.main', color: 'white', px: 2, py: 1, borderRadius: 1, mt: 2, mb: 4 }}>
+              Staten Island's ONLY Provider of Yomi Robotic Dental Implant Technology
+            </Box>
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              component={RouterLink}
+              to="/contact"
+              sx={{ mt: 2, px: 4, py: 1.5 }}
+            >
+              SCHEDULE A CONSULTATION
+            </Button>
+          </motion.div>
+        </Container>
+      </Box>
 
       {/* Welcome Section */}
       <Container maxWidth="lg">
@@ -137,6 +183,97 @@ const HomePage: React.FC = () => {
           </Grid>
         </Box>
       </Container>
+
+      {/* Featured Technology Section - Yomi Robotic Dental Implant System */}
+      <Box sx={{ py: 12, backgroundColor: 'grey.100' }}>
+        <Container maxWidth="lg">
+          <Grid container spacing={6} alignItems="center">
+            <Grid item xs={12} md={6}>
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <Typography 
+                  variant="h2" 
+                  component="h2" 
+                  gutterBottom 
+                  sx={{ 
+                    color: 'primary.main',
+                    fontWeight: 'bold' 
+                  }}
+                >
+                  REVOLUTIONARY YOMI ROBOTIC TECHNOLOGY
+                </Typography>
+                <Typography variant="h5" sx={{ mb: 3, color: 'secondary.main', fontWeight: 'medium' }}>
+                  The Future of Dental Implant Surgery is Here
+                </Typography>
+                <Typography variant="body1" paragraph>
+                  Dr. Greg Pedro is proud to be the <strong>only dentist in Staten Island</strong> and one of the few in New York City to offer Yomi Robotic-Guided Dental Implant Surgery. This cutting-edge technology represents a significant advancement in dental implant procedures.
+                </Typography>
+                <Typography variant="body1" paragraph>
+                  The Yomi robotic system provides unprecedented precision and control during implant placement, resulting in faster healing times, reduced discomfort, and exceptional outcomes for our patients.
+                </Typography>
+                <List sx={{ mb: 3 }}>
+                  {[
+                    "Greater precision and accuracy with sub-millimeter control",
+                    "Minimally invasive procedures with less discomfort",
+                    "Faster recovery times and reduced appointments",
+                    "Same-day surgery possibilities for qualifying patients",
+                    "Enhanced predictability for superior aesthetic results"
+                  ].map((benefit, i) => (
+                    <ListItem key={i} sx={{ py: 0.5 }}>
+                      <ListItemIcon>
+                        <CheckIcon color="secondary" />
+                      </ListItemIcon>
+                      <ListItemText primary={benefit} />
+                    </ListItem>
+                  ))}
+                </List>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                  component={RouterLink}
+                  to="/yomi-technology"
+                  endIcon={<ArrowForwardIcon />}
+                  sx={{ mt: 2 }}
+                >
+                  LEARN MORE ABOUT YOMI TECHNOLOGY
+                </Button>
+              </motion.div>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <Box
+                  component="img"
+                  src="/images/yomi-robot-procedure.jpg"
+                  alt="Yomi Robotic Dental Implant System"
+                  sx={{
+                    width: '100%',
+                    borderRadius: 4,
+                    boxShadow: '0 12px 30px rgba(0,0,0,0.15)',
+                  }}
+                />
+                <Box sx={{ mt: 3, p: 3, backgroundColor: 'white', borderRadius: 2, boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}>
+                  <Typography variant="h6" gutterBottom sx={{ color: 'primary.main', fontWeight: 'bold' }}>
+                    "The Yomi technology has transformed my practice. It allows me to provide my patients with the most precise, comfortable implant experience available today."
+                  </Typography>
+                  <Typography variant="subtitle1" sx={{ fontWeight: 'medium' }}>
+                    — Dr. Greg Pedro
+                  </Typography>
+                </Box>
+              </motion.div>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
 
       {/* Services Section */}
       <Box sx={{ py: 8, backgroundColor: 'grey.50' }}>
@@ -258,6 +395,48 @@ const HomePage: React.FC = () => {
               </Grid>
             ))}
           </Grid>
+        </Container>
+      </Box>
+
+      {/* Yomi Testimonial */}
+      <Box sx={{ py: 6, backgroundColor: 'secondary.light' }}>
+        <Container maxWidth="md">
+          <Box sx={{ 
+            p: 4, 
+            borderRadius: 4, 
+            boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+            backgroundColor: 'white'
+          }}>
+            <Grid container spacing={4} alignItems="center">
+              <Grid item xs={12} md={4}>
+                <Box
+                  component="img"
+                  src="/images/yomi-patient-testimonial.jpg"
+                  alt="Happy Yomi Dental Implant Patient"
+                  sx={{
+                    width: '100%',
+                    borderRadius: '50%',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12} md={8}>
+                <Typography 
+                  variant="h5" 
+                  sx={{ mb: 2, fontStyle: 'italic', color: 'primary.main' }}
+                >
+                  "I was amazed at how quick and comfortable my dental implant procedure was with Dr. Pedro's Yomi robotic technology. I was back to work the next day with minimal discomfort, and my new tooth looks completely natural. It's incredible how advanced dentistry has become!"
+                </Typography>
+                <Divider sx={{ my: 2 }} />
+                <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                  Sarah Thompson
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Yomi Robotic-Assisted Dental Implant Patient
+                </Typography>
+              </Grid>
+            </Grid>
+          </Box>
         </Container>
       </Box>
 

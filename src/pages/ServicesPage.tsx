@@ -139,27 +139,23 @@ const ServicesPage: React.FC = () => {
       {/* Hero Section */}
       <Box 
         sx={{ 
-          height: '50vh', 
-          minHeight: '400px', 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center',
+          pt: 15, 
+          pb: 10, 
+          backgroundColor: 'primary.main',
+          color: 'white',
           backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/images/services-hero.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          color: 'white',
-          textAlign: 'center',
-          p: 4
         }}
       >
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Typography variant="h1" component="h1" gutterBottom sx={{ fontSize: { xs: '2.5rem', md: '3.5rem' } }}>
-              EXCEPTIONAL CARE, EXTRAORDINARY RESULTS
+            <Typography variant="h1" component="h1" gutterBottom>
+              EXCEPTIONAL DENTAL SERVICES
             </Typography>
             <Typography variant="h5" sx={{ mb: 4, maxWidth: '800px', mx: 'auto' }}>
               Dr. Pedro's approach to dental care combines artistic vision with advanced science for truly transformative results
@@ -175,6 +171,75 @@ const ServicesPage: React.FC = () => {
               Schedule Your Consultation
             </Button>
           </motion.div>
+        </Container>
+      </Box>
+
+      {/* Yomi Robotic Technology Feature Callout */}
+      <Box sx={{ py: 8, backgroundColor: 'secondary.light' }}>
+        <Container maxWidth="lg">
+          <Box sx={{ 
+            display: 'flex', 
+            flexDirection: { xs: 'column', md: 'row' },
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 4
+          }}>
+            <Box sx={{ flex: 1, textAlign: { xs: 'center', md: 'left' } }}>
+              <Typography 
+                variant="h3" 
+                component="h2" 
+                sx={{ 
+                  color: 'primary.main',
+                  fontWeight: 'bold',
+                  mb: 2 
+                }}
+              >
+                ADVANCED YOMI ROBOTIC TECHNOLOGY
+              </Typography>
+              <Typography 
+                variant="h5" 
+                sx={{ 
+                  mb: 2,
+                  fontWeight: 'medium'
+                }}
+              >
+                Staten Island's ONLY Provider of Yomi Robotic Dental Implant Technology
+              </Typography>
+              <Typography variant="body1" paragraph>
+                Dr. Greg Pedro is proud to be the only dentist in Staten Island and one of the few in New York City to offer Yomi Robotic-Guided Dental Implant Surgery. This revolutionary technology delivers unmatched precision, faster recovery times, and exceptional results for dental implant patients.
+              </Typography>
+              <Button 
+                variant="contained" 
+                color="primary" 
+                component={RouterLink} 
+                to="/yomi-technology"
+                size="large"
+                endIcon={<ArrowForwardIcon />}
+                sx={{ mt: 2 }}
+              >
+                Learn More About Yomi
+              </Button>
+            </Box>
+            <Box 
+              sx={{ 
+                flex: 1,
+                display: 'flex',
+                justifyContent: 'center'
+              }}
+            >
+              <Box 
+                component="img"
+                src="/images/yomi-robot.jpg"
+                alt="Yomi Robotic Dental Implant System"
+                sx={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                  borderRadius: 4,
+                  boxShadow: '0 12px 24px rgba(0,0,0,0.15)'
+                }}
+              />
+            </Box>
+          </Box>
         </Container>
       </Box>
 
@@ -220,6 +285,21 @@ const ServicesPage: React.FC = () => {
                     />
                     <CardContent sx={{ flexGrow: 1, p: 3 }}>
                       <Typography gutterBottom variant="h5" component="h2" sx={{ fontWeight: 600 }}>
+                        {service.title === "Dental Implants" && (
+                          <Box sx={{ 
+                            display: 'inline-block', 
+                            bgcolor: 'secondary.main', 
+                            color: 'white',
+                            px: 1.5,
+                            py: 0.5,
+                            borderRadius: 1,
+                            fontSize: '0.8rem',
+                            fontWeight: 'bold',
+                            mb: 1
+                          }}>
+                            YOMI ROBOTIC TECHNOLOGY
+                          </Box>
+                        )}
                         {service.title}
                       </Typography>
                       <Typography variant="body2" color="text.secondary" paragraph>
@@ -276,6 +356,34 @@ const ServicesPage: React.FC = () => {
                     <Typography variant="body1" paragraph>
                       {service.fullDescription}
                     </Typography>
+                    
+                    {service.title === "Dental Implants" && (
+                      <>
+                        <Typography variant="h6" gutterBottom sx={{ mt: 4, color: theme.palette.secondary.main, fontWeight: 'bold' }}>
+                          Exclusive Yomi Robotic Technology:
+                        </Typography>
+                        <Typography variant="body1" paragraph>
+                          Dr. Pedro is the only dentist in Staten Island and one of the few in New York City to offer Yomi Robotic-Guided Dental Implant Surgery. This revolutionary technology provides:
+                        </Typography>
+                        <List>
+                          {[
+                            "Sub-millimeter precision for optimal implant placement",
+                            "Minimally invasive procedures with less discomfort",
+                            "Faster recovery times and reduced downtime",
+                            "Fewer appointments needed compared to traditional implants",
+                            "Same-day surgery possibilities for qualifying patients",
+                            "Enhanced predictability for superior aesthetic results"
+                          ].map((benefit, i) => (
+                            <ListItem key={i} disableGutters sx={{ py: 0.5 }}>
+                              <ListItemIcon sx={{ minWidth: 36 }}>
+                                <CheckIcon color="secondary" />
+                              </ListItemIcon>
+                              <ListItemText primary={benefit} />
+                            </ListItem>
+                          ))}
+                        </List>
+                      </>
+                    )}
                     
                     <Typography variant="h6" gutterBottom sx={{ mt: 4 }}>
                       Benefits:

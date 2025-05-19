@@ -231,7 +231,8 @@ const ContactPage: React.FC = () => {
                           onChange={handleRadioChange}
                         >
                           <FormControlLabel value="consultation" control={<Radio />} label="Consultation" />
-                          <FormControlLabel value="implant" control={<Radio />} label="Dental Implant" />
+                          <FormControlLabel value="yomi-implant" control={<Radio />} label="Yomi Robotic Implant" />
+                          <FormControlLabel value="implant" control={<Radio />} label="Traditional Implant" />
                           <FormControlLabel value="cosmetic" control={<Radio />} label="Cosmetic Dentistry" />
                           <FormControlLabel value="other" control={<Radio />} label="Other" />
                         </RadioGroup>
