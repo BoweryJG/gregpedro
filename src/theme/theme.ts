@@ -5,11 +5,11 @@ import { alpha } from '@mui/material';
 declare module '@mui/material/styles' {
   interface Palette {
     bionic: Palette['primary'];
-    coral: Palette['primary'];
+    accent: Palette['primary'];
   }
   interface PaletteOptions {
     bionic?: PaletteOptions['primary'];
-    coral?: PaletteOptions['primary'];
+    accent?: PaletteOptions['primary'];
   }
   interface Theme {
     customPalette: {
@@ -44,32 +44,32 @@ const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#0B84FF', // Electric Azure - vibrant tech blue
-      light: '#4FACFF',
-      dark: '#0066CC',
+      main: '#0B3B60', // Deep blue - authoritative, trustworthy
+      light: '#11507E',
+      dark: '#092C47',
       contrastText: '#FFFFFF',
     },
     secondary: {
-      main: '#6C2FF2', // Deep Ultraviolet - premium purple
-      light: '#9871F5',
-      dark: '#5016CF',
+      main: '#005F59', // Medical teal - clinical, precise
+      light: '#00736C',
+      dark: '#004A45',
       contrastText: '#FFFFFF',
     },
     background: {
-      default: '#FFFFFF', // Bright White
-      paper: '#F6F9FC', // Ultra-light tech gray
+      default: '#FFFFFF', // Pure white - clinical clean
+      paper: '#F8FAFC', // Off-white - subtle warmth
     },
     // Custom colors need to be accessed via theme.palette.bionic.main, etc.
     bionic: {
-      main: '#00F5D4', // Bionic Mint - for Yomi tech highlights
-      light: '#7DFFEE',
-      dark: '#00C5A8',
-      contrastText: '#1A1E35',
+      main: '#005F59', // Clinical teal - professional, medical
+      light: '#00736C',
+      dark: '#004A45',
+      contrastText: '#FFFFFF',
     },
-    coral: {
-      main: '#FF3D71', // Laser Coral - for attention elements
-      light: '#FF7A9E',
-      dark: '#DB1952',
+    accent: {
+      main: '#B99454', // Subtle gold - premium, high-end
+      light: '#D1AF6F',
+      dark: '#9E7B42',
       contrastText: '#FFFFFF',
     },
     text: {
