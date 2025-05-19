@@ -108,124 +108,57 @@ const ContactPage: React.FC = () => {
     },
     {
       icon: <LocationIcon fontSize="large" />,
-      title: 'Address',
-      content: '123 Dental Ave, Staten Island, NY 10301',
-      action: 'https://maps.google.com/?q=123+Dental+Ave,+Staten+Island,+NY+10301'
-    },
-    {
-      icon: <TimeIcon fontSize="large" />,
-      title: 'Office Hours',
-      content: 'Mon-Fri: 9AM-5PM | Sat: 9AM-2PM',
-      action: null
+      title: 'Location',
+      content: '123 Main Street, Staten Island, NY 10301',
+      action: 'https://maps.google.com/?q=123+Main+Street,+Staten+Island,+NY+10301'
     }
+  ];
+  
+  const officeHours = [
+    { day: 'Monday', hours: '9:00 AM - 5:00 PM' },
+    { day: 'Tuesday', hours: '9:00 AM - 5:00 PM' },
+    { day: 'Wednesday', hours: '9:00 AM - 5:00 PM' },
+    { day: 'Thursday', hours: '9:00 AM - 5:00 PM' },
+    { day: 'Friday', hours: '9:00 AM - 3:00 PM' },
+    { day: 'Saturday - Sunday', hours: 'Closed' }
   ];
 
   return (
     <Container maxWidth="lg">
       <Box sx={{ py: 8 }}>
-        {/* Contact Header */}
-        <Box sx={{ textAlign: 'center', mb: 6 }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Typography variant="h2" component="h1" gutterBottom>
-              Contact Us
-            </Typography>
-            <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 700, mx: 'auto' }}>
-              We're here to answer your questions and help you schedule your appointment with Dr. Greg Pedro.
-            </Typography>
-          </motion.div>
-        </Box>
-
-        {/* Contact Info Cards */}
-        <Grid container spacing={3} sx={{ mb: 6 }}>
-          {contactInfo.map((info, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card 
-                  sx={{ 
-                    height: '100%',
-                    textAlign: 'center',
-                    borderRadius: 2,
-                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
-                    transition: 'transform 0.3s ease',
-                    '&:hover': {
-                      transform: 'translateY(-5px)',
-                      boxShadow: '0 8px 20px rgba(0,0,0,0.1)'
-                    }
-                  }}
-                >
-                  <CardContent>
-                    <Box 
-                      sx={{ 
-                        color: theme.palette.primary.main,
-                        mb: 2
-                      }}
-                    >
-                      {info.icon}
-                    </Box>
-                    <Typography variant="h6" gutterBottom>
-                      {info.title}
-                    </Typography>
-                    {info.action ? (
-                      <Button 
-                        href={info.action}
-                        target={info.action.startsWith('http') ? '_blank' : undefined}
-                        rel={info.action.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        sx={{ 
-                          color: theme.palette.text.secondary,
-                          textDecoration: 'none',
-                          '&:hover': {
-                            color: theme.palette.primary.main,
-                            textDecoration: 'underline'
-                          }
-                        }}
-                      >
-                        {info.content}
-                      </Button>
-                    ) : (
-                      <Typography variant="body2" color="text.secondary">
-                        {info.content}
-                      </Typography>
-                    )}
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
-
+        {/* Page Title */}
+        <Typography variant="h2" component="h1" align="center" gutterBottom>
+          BEGIN YOUR SMILE TRANSFORMATION
+        </Typography>
+        <Typography variant="h5" align="center" color="text.secondary" sx={{ mb: 6, maxWidth: 800, mx: 'auto' }}>
+          Schedule your consultation with Dr. Greg Pedro, Staten Island's premier implant specialist, and discover the life-changing difference his artistic approach and championship-level precision can make.
+        </Typography>
+        
         <Grid container spacing={6}>
           {/* Contact Form */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={7}>
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
               <Paper 
-                elevation={0}
+                elevation={3} 
                 sx={{ 
                   p: 4, 
                   borderRadius: 2,
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
+                  height: '100%'
                 }}
               >
                 <Typography variant="h4" gutterBottom>
-                  Send Us a Message
+                  Request an Appointment
                 </Typography>
-                <Typography variant="body1" paragraph color="text.secondary">
-                  Fill out the form below and we'll get back to you as soon as possible.
+                <Typography variant="body1" paragraph sx={{ mb: 4 }}>
+                  Fill out the form below and our team will contact you promptly to schedule your personalized consultation with Dr. Pedro.
                 </Typography>
                 
-                <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
-                  <Grid container spacing={2}>
+                <form onSubmit={handleSubmit}>
+                  <Grid container spacing={3}>
                     <Grid item xs={12} sm={6}>
                       <TextField
                         required
@@ -267,14 +200,15 @@ const ContactPage: React.FC = () => {
                         onChange={handleChange}
                       />
                     </Grid>
+                    
                     <Grid item xs={12}>
-                      <FormControl component="fieldset" sx={{ mb: 2 }}>
-                        <Typography variant="subtitle2" gutterBottom>
-                          Preferred Contact Method
-                        </Typography>
-                        <RadioGroup
-                          row
-                          name="contactPreference"
+                      <Typography variant="subtitle1" gutterBottom>
+                        Preferred Contact Method
+                      </Typography>
+                      <FormControl component="fieldset">
+                        <RadioGroup 
+                          row 
+                          name="contactPreference" 
                           value={formData.contactPreference}
                           onChange={handleRadioChange}
                         >
@@ -284,24 +218,26 @@ const ContactPage: React.FC = () => {
                         </RadioGroup>
                       </FormControl>
                     </Grid>
+                    
                     <Grid item xs={12}>
-                      <FormControl component="fieldset" sx={{ mb: 2 }}>
-                        <Typography variant="subtitle2" gutterBottom>
-                          Appointment Type
-                        </Typography>
-                        <RadioGroup
-                          row
-                          name="appointmentType"
+                      <Typography variant="subtitle1" gutterBottom>
+                        Appointment Type
+                      </Typography>
+                      <FormControl component="fieldset">
+                        <RadioGroup 
+                          row 
+                          name="appointmentType" 
                           value={formData.appointmentType}
                           onChange={handleRadioChange}
                         >
                           <FormControlLabel value="consultation" control={<Radio />} label="Consultation" />
-                          <FormControlLabel value="cleaning" control={<Radio />} label="Cleaning" />
-                          <FormControlLabel value="emergency" control={<Radio />} label="Emergency" />
+                          <FormControlLabel value="implant" control={<Radio />} label="Dental Implant" />
+                          <FormControlLabel value="cosmetic" control={<Radio />} label="Cosmetic Dentistry" />
                           <FormControlLabel value="other" control={<Radio />} label="Other" />
                         </RadioGroup>
                       </FormControl>
                     </Grid>
+                    
                     <Grid item xs={12}>
                       <TextField
                         fullWidth
@@ -311,107 +247,181 @@ const ContactPage: React.FC = () => {
                         rows={4}
                         value={formData.message}
                         onChange={handleChange}
+                        placeholder="Please share any specific concerns or questions you have for Dr. Pedro"
                       />
                     </Grid>
+                    
                     <Grid item xs={12}>
-                      <Button
-                        type="submit"
-                        variant="contained"
-                        color="primary"
+                      <Button 
+                        type="submit" 
+                        variant="contained" 
+                        color="primary" 
                         size="large"
                         fullWidth
-                        sx={{ mt: 2 }}
+                        sx={{ py: 1.5 }}
                       >
-                        Send Message
+                        Submit Request
                       </Button>
                     </Grid>
                   </Grid>
-                </Box>
+                </form>
               </Paper>
             </motion.div>
           </Grid>
           
-          {/* Map and Office Info */}
-          <Grid item xs={12} md={6}>
+          {/* Contact Information */}
+          <Grid item xs={12} md={5}>
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Paper 
-                elevation={0}
-                sx={{ 
-                  height: '100%',
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
-                }}
-              >
-                <Box 
+              <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                <Card 
+                  elevation={3} 
                   sx={{ 
-                    width: '100%', 
-                    height: 300,
-                    position: 'relative'
+                    p: 3, 
+                    borderRadius: 2,
+                    mb: 4,
+                    backgroundColor: theme.palette.primary.main,
+                    color: 'white'
                   }}
                 >
-                  <iframe
-                    title="Office Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96708.34194156103!2d-74.19453151405318!3d40.57887838324388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24a6a8c1a67e7%3A0x30e04d35c2a7fbac!2sStaten%20Island%2C%20NY!5e0!3m2!1sen!2sus!4v1621555834267!5m2!1sen!2sus"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                  />
-                </Box>
+                  <CardContent>
+                    <Typography variant="h4" gutterBottom>
+                      THE ABOUT FACE DIFFERENCE
+                    </Typography>
+                    <Typography variant="body1" paragraph>
+                      When you visit Dr. Pedro's practice, you'll experience dental care like never before. Our luxurious facility features massage chairs, Netflix viewing during treatment, and a warm, welcoming environment designed to make even the most anxious patients feel at ease.
+                    </Typography>
+                    <Typography variant="body1">
+                      Dr. Pedro's gentle approach, painless injections, and compassionate care have earned him over 100 five-star reviews from patients who once described themselves as dental phobic.
+                    </Typography>
+                  </CardContent>
+                </Card>
                 
-                <Box sx={{ p: 4 }}>
-                  <Typography variant="h4" gutterBottom>
-                    Visit Our Office
-                  </Typography>
-                  <Typography variant="body1" paragraph>
-                    Our modern dental office is equipped with the latest technology to provide you with the best possible care. We're conveniently located in Staten Island with ample parking available.
-                  </Typography>
-                  
-                  <Typography variant="h6" sx={{ mt: 3, mb: 1 }}>
-                    Office Hours
-                  </Typography>
-                  <Grid container spacing={1}>
-                    {[
-                      { day: 'Monday', hours: '9:00 AM - 5:00 PM' },
-                      { day: 'Tuesday', hours: '9:00 AM - 5:00 PM' },
-                      { day: 'Wednesday', hours: '9:00 AM - 5:00 PM' },
-                      { day: 'Thursday', hours: '9:00 AM - 5:00 PM' },
-                      { day: 'Friday', hours: '9:00 AM - 5:00 PM' },
-                      { day: 'Saturday', hours: '9:00 AM - 2:00 PM' },
-                      { day: 'Sunday', hours: 'Closed' }
-                    ].map((item, index) => (
-                      <React.Fragment key={index}>
-                        <Grid item xs={4} sm={3}>
-                          <Typography variant="body2" fontWeight={600}>
-                            {item.day}:
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={8} sm={9}>
-                          <Typography variant="body2">
-                            {item.hours}
-                          </Typography>
-                        </Grid>
-                      </React.Fragment>
+                <Card 
+                  elevation={3} 
+                  sx={{ 
+                    p: 3, 
+                    borderRadius: 2,
+                    mb: 4
+                  }}
+                >
+                  <CardContent>
+                    <Typography variant="h5" gutterBottom>
+                      Contact Information
+                    </Typography>
+                    <Box sx={{ mt: 3 }}>
+                      {contactInfo.map((info, index) => (
+                        <Box 
+                          key={index} 
+                          component="a"
+                          href={info.action}
+                          sx={{ 
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            mb: 3,
+                            color: 'inherit',
+                            textDecoration: 'none',
+                            '&:hover': {
+                              color: theme.palette.primary.main
+                            }
+                          }}
+                        >
+                          <Box sx={{ 
+                            mr: 2, 
+                            color: theme.palette.primary.main,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            width: 50,
+                            height: 50,
+                            borderRadius: '50%',
+                            backgroundColor: 'rgba(25, 118, 210, 0.1)'
+                          }}>
+                            {info.icon}
+                          </Box>
+                          <Box>
+                            <Typography variant="h6">
+                              {info.title}
+                            </Typography>
+                            <Typography variant="body1">
+                              {info.content}
+                            </Typography>
+                          </Box>
+                        </Box>
+                      ))}
+                    </Box>
+                  </CardContent>
+                </Card>
+                
+                <Card 
+                  elevation={3} 
+                  sx={{ 
+                    p: 3, 
+                    borderRadius: 2,
+                    flexGrow: 1
+                  }}
+                >
+                  <CardContent>
+                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                      <TimeIcon sx={{ mr: 1, color: theme.palette.primary.main }} />
+                      <Typography variant="h5">
+                        Office Hours
+                      </Typography>
+                    </Box>
+                    
+                    {officeHours.map((item, index) => (
+                      <Box 
+                        key={index} 
+                        sx={{ 
+                          display: 'flex', 
+                          justifyContent: 'space-between',
+                          borderBottom: index < officeHours.length - 1 ? '1px solid rgba(0,0,0,0.1)' : 'none',
+                          py: 1.5
+                        }}
+                      >
+                        <Typography variant="body1" fontWeight={500}>
+                          {item.day}
+                        </Typography>
+                        <Typography variant="body1">
+                          {item.hours}
+                        </Typography>
+                      </Box>
                     ))}
-                  </Grid>
-                  
-                  <Typography variant="h6" sx={{ mt: 3, mb: 1 }}>
-                    Emergency Care
-                  </Typography>
-                  <Typography variant="body2">
-                    If you're experiencing a dental emergency, please call our office immediately at <strong>(123) 456-7890</strong>. We reserve time in our schedule for emergency appointments.
-                  </Typography>
-                </Box>
-              </Paper>
+                  </CardContent>
+                </Card>
+              </Box>
             </motion.div>
           </Grid>
         </Grid>
+        
+        {/* Map Section */}
+        <Box sx={{ mt: 8 }}>
+          <Typography variant="h4" gutterBottom align="center" sx={{ mb: 4 }}>
+            Find Us
+          </Typography>
+          <Paper 
+            elevation={3} 
+            sx={{ 
+              borderRadius: 2,
+              overflow: 'hidden',
+              height: 450
+            }}
+          >
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193578.74109041138!2d-74.25986773513004!3d40.697403441436814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sStaten%20Island%2C%20NY!5e0!3m2!1sen!2sus!4v1651234567890!5m2!1sen!2sus" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Office Location"
+            />
+          </Paper>
+        </Box>
       </Box>
       
       <Snackbar 
@@ -422,7 +432,7 @@ const ContactPage: React.FC = () => {
       >
         <Alert 
           onClose={handleCloseSnackbar} 
-          severity={snackbar.severity}
+          severity={snackbar.severity} 
           sx={{ width: '100%' }}
         >
           {snackbar.message}

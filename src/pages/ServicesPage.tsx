@@ -30,81 +30,81 @@ const ServicesPage: React.FC = () => {
     {
       id: 'dental-implants',
       title: 'Dental Implants',
-      shortDescription: 'Replace missing teeth with permanent, natural-looking dental implants.',
-      fullDescription: 'Dental implants are titanium posts surgically placed into the jawbone beneath your gums to provide a stable foundation for artificial teeth. They offer a long-term solution for missing teeth and help preserve facial structure by preventing bone deterioration.',
+      shortDescription: 'Replace missing teeth with permanent, natural-looking dental implants crafted by Dr. Pedro.',
+      fullDescription: 'Dental implants are titanium posts surgically placed into the jawbone beneath your gums to provide a stable foundation for artificial teeth. With Dr. Pedro\'s artistic eye and championship-level precision, these implants offer a long-term solution for missing teeth while preserving facial structure and preventing bone deterioration. As an ADA-Certified Prosthodontist with over 30 years of experience, Dr. Pedro brings unparalleled expertise to every implant procedure.',
       image: '/images/services/dental-implants.jpg',
       benefits: [
-        'Looks and functions like natural teeth',
-        'Prevents bone loss in the jaw',
-        'Improves ability to eat and speak',
+        'Looks and functions like natural teeth with Dr. Pedro\'s artistic approach',
+        'Prevents bone loss in the jaw through precise placement techniques',
+        'Improves ability to eat and speak with confidence',
         'Long-lasting solution (can last a lifetime with proper care)',
-        'No adhesives or removal needed'
+        'No adhesives or removal needed - a truly permanent solution'
       ],
       process: [
-        'Initial consultation and treatment planning',
-        'Implant placement surgery',
-        'Healing period (osseointegration)',
-        'Abutment placement',
-        'Crown attachment'
+        'Comprehensive consultation with Dr. Pedro for personalized treatment planning',
+        'Precision implant placement surgery using advanced techniques',
+        'Monitored healing period (osseointegration)',
+        'Custom abutment placement designed for your unique smile',
+        'Artistically crafted crown attachment for natural aesthetics'
       ]
     },
     {
       id: 'implant-restoration',
       title: 'Implant Restoration',
-      shortDescription: 'Restore damaged implants with our expert care.',
-      fullDescription: 'Implant restoration involves repairing or replacing the visible portion of an implant that may have become damaged or worn over time. Our expert team can restore your implants to ensure they continue to function properly and look natural.',
+      shortDescription: 'Restore damaged implants with Dr. Pedro\'s expert care and artistic vision.',
+      fullDescription: 'Implant restoration involves repairing or replacing the visible portion of an implant that may have become damaged or worn over time. Dr. Pedro\'s specialized training in prosthodontics and over 600 hours of continuing education make him uniquely qualified to restore your implants, ensuring they continue to function properly and look completely natural for years to come.',
       image: '/images/services/implant-restoration.jpg',
       benefits: [
-        'Extends the life of your dental implant',
-        'Maintains proper function and aesthetics',
-        'Prevents further complications',
-        'Preserves your investment in dental implants',
-        'Minimally invasive procedures'
+        'Extends the life of your dental implant with expert care',
+        'Maintains proper function and aesthetics with artistic precision',
+        'Prevents further complications through early intervention',
+        'Preserves your investment in dental implants for the long term',
+        'Minimally invasive procedures for your comfort'
       ],
       process: [
-        'Evaluation of implant condition',
-        'Treatment planning',
-        'Restoration procedure',
-        'Final adjustments',
-        'Maintenance instructions'
+        'Detailed evaluation of implant condition by Dr. Pedro personally',
+        'Customized treatment planning based on your specific needs',
+        'Precision restoration procedure using advanced techniques',
+        'Meticulous final adjustments for perfect fit and function',
+        'Comprehensive maintenance instructions for lasting results'
       ]
     },
     {
       id: 'full-mouth-reconstruction',
       title: 'Full Mouth Reconstruction',
-      shortDescription: 'Transform your smile completely with comprehensive reconstruction.',
-      fullDescription: 'Full mouth reconstruction is a comprehensive treatment that rebuilds or simultaneously restores all of the teeth in both the upper and lower jaws. Dr. Pedro combines his expertise in implant dentistry with advanced techniques to create a functional, comfortable, and beautiful smile.',
+      shortDescription: 'Transform your smile completely with Dr. Pedro\'s comprehensive reconstruction expertise.',
+      fullDescription: 'Full mouth reconstruction is a comprehensive treatment that rebuilds or simultaneously restores all of the teeth in both the upper and lower jaws. Dr. Pedro combines his expertise in implant dentistry with advanced techniques and artistic vision to create a functional, comfortable, and beautiful smile. His background as a Staten Island sports legend translates into the same championship-level dedication to your complete smile transformation.',
       image: '/images/services/full-mouth.jpg',
       benefits: [
-        'Complete transformation of your smile',
-        'Improved oral function and health',
-        'Enhanced facial appearance',
-        'Long-term solution for multiple dental issues',
-        'Customized treatment plan'
+        'Complete transformation of your smile with life-changing results',
+        'Improved oral function and health through comprehensive planning',
+        'Enhanced facial appearance with Dr. Pedro\'s aesthetic expertise',
+        'Long-term solution for multiple dental issues with unified treatment',
+        'Customized treatment plan tailored to your unique needs and goals'
       ],
       process: [
-        'Comprehensive examination and diagnosis',
-        'Digital treatment planning',
-        'Preparatory procedures if needed',
-        'Implant placement and temporary restoration',
-        'Final restoration placement'
+        'In-depth examination and diagnosis with Dr. Pedro',
+        'Advanced digital treatment planning for precision results',
+        'Preparatory procedures if needed for optimal outcomes',
+        'Strategic implant placement and comfortable temporary restoration',
+        'Artistic final restoration placement for natural beauty'
       ]
     },
     {
       id: 'cosmetic-dentistry',
       title: 'Cosmetic Dentistry',
-      shortDescription: 'Enhance your smile with our range of cosmetic dental procedures.',
-      fullDescription: 'Our cosmetic dentistry services focus on improving the appearance of your smile. From teeth whitening to veneers, we offer a variety of treatments to help you achieve the smile you have always wanted.',
+      shortDescription: 'Enhance your smile with our range of cosmetic dental procedures designed by Dr. Pedro.',
+      fullDescription: 'Our cosmetic dentistry services focus on improving the appearance of your smile while maintaining optimal function. From teeth whitening to veneers, Dr. Pedro offers a variety of treatments to help you achieve the smile you have always wanted. His artistic eye and attention to detail ensure results that are not just beautiful, but natural-looking and harmonious with your facial features.',
       image: '/images/services/cosmetic-dentistry.jpg',
       benefits: [
-        'Enhanced smile aesthetics',
-        'Increased confidence',
-        'Customized to your preferences',
+        'Enhanced smile aesthetics with personalized design',
+        'Increased confidence in your smile',
+        'Customized to your preferences and needs',
         'Can address multiple concerns simultaneously',
         'Modern techniques for natural-looking results'
       ],
       process: [
-        'Smile analysis consultation',
+        'Smile analysis consultation with Dr. Pedro',
         'Treatment planning and digital previews',
         'Preparation procedures',
         'Treatment implementation',
@@ -135,231 +135,271 @@ const ServicesPage: React.FC = () => {
   ];
 
   return (
-    <Container maxWidth="lg">
-      <Box sx={{ py: 8 }}>
-        {/* Services Header */}
-        <Box sx={{ textAlign: 'center', mb: 6 }}>
+    <Box>
+      {/* Hero Section */}
+      <Box 
+        sx={{ 
+          height: '50vh', 
+          minHeight: '400px', 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center',
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/images/services-hero.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          color: 'white',
+          textAlign: 'center',
+          p: 4
+        }}
+      >
+        <Container maxWidth="md">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Typography variant="h2" component="h1" gutterBottom>
-              Our Services
+            <Typography variant="h1" component="h1" gutterBottom sx={{ fontSize: { xs: '2.5rem', md: '3.5rem' } }}>
+              EXCEPTIONAL CARE, EXTRAORDINARY RESULTS
             </Typography>
-            <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 800, mx: 'auto' }}>
-              Dr. Greg Pedro offers a comprehensive range of dental implant and restorative services
-              to help you achieve a healthy, functional, and beautiful smile.
+            <Typography variant="h5" sx={{ mb: 4, maxWidth: '800px', mx: 'auto' }}>
+              Dr. Pedro's approach to dental care combines artistic vision with advanced science for truly transformative results
             </Typography>
+            <Button 
+              variant="contained" 
+              color="primary" 
+              component={RouterLink} 
+              to="/contact"
+              size="large"
+              sx={{ px: 4, py: 1.5 }}
+            >
+              Schedule Your Consultation
+            </Button>
           </motion.div>
-        </Box>
+        </Container>
+      </Box>
 
-        {/* Services Overview Cards */}
-        <Grid container spacing={4} sx={{ mb: 8 }}>
-          {services.map((service, index) => (
-            <Grid item xs={12} sm={6} md={4} key={service.id}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card 
-                  sx={{ 
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    borderRadius: 2,
-                    overflow: 'hidden',
-                    boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                    transition: 'transform 0.3s ease',
-                    '&:hover': {
-                      transform: 'translateY(-10px)',
-                      boxShadow: '0 12px 20px rgba(0,0,0,0.12)'
-                    }
-                  }}
+      {/* Services Introduction */}
+      <Container maxWidth="lg">
+        <Box sx={{ py: 8, textAlign: 'center' }}>
+          <Typography variant="h2" component="h2" gutterBottom>
+            OUR SPECIALIZED SERVICES
+          </Typography>
+          <Typography variant="h6" sx={{ maxWidth: 800, mx: 'auto', mb: 6 }}>
+            With over 30 years of experience and specialized training in prosthodontics, Dr. Greg Pedro offers a comprehensive range of dental implant and restorative services designed to transform your smile and improve your quality of life.
+          </Typography>
+
+          {/* Services Overview Cards */}
+          <Grid container spacing={4} sx={{ mb: 8 }}>
+            {services.map((service, index) => (
+              <Grid item xs={12} sm={6} md={4} key={service.id}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <CardMedia
-                    component="img"
-                    height="200"
-                    image={service.image}
-                    alt={service.title}
-                  />
-                  <CardContent sx={{ flexGrow: 1, p: 3 }}>
-                    <Typography gutterBottom variant="h5" component="h2" sx={{ fontWeight: 600 }}>
+                  <Card 
+                    sx={{ 
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      borderRadius: 2,
+                      overflow: 'hidden',
+                      boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                      transition: 'transform 0.3s ease',
+                      '&:hover': {
+                        transform: 'translateY(-10px)',
+                        boxShadow: '0 12px 20px rgba(0,0,0,0.12)'
+                      }
+                    }}
+                  >
+                    <CardMedia
+                      component="img"
+                      height="200"
+                      image={service.image}
+                      alt={service.title}
+                    />
+                    <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                      <Typography gutterBottom variant="h5" component="h2" sx={{ fontWeight: 600 }}>
+                        {service.title}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary" paragraph>
+                        {service.shortDescription}
+                      </Typography>
+                      <Button 
+                        component={RouterLink} 
+                        to={`#${service.id}`}
+                        variant="text" 
+                        color="primary"
+                        endIcon={<ArrowForwardIcon />}
+                        sx={{ mt: 'auto', alignSelf: 'flex-start' }}
+                      >
+                        Learn More
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </Grid>
+            ))}
+          </Grid>
+
+          {/* Detailed Service Sections */}
+          {services.map((service, index) => (
+            <Box 
+              key={service.id} 
+              id={service.id}
+              sx={{ 
+                scrollMarginTop: '100px',
+                mb: 10
+              }}
+            >
+              <Grid 
+                container 
+                spacing={6} 
+                direction={index % 2 === 0 ? 'row' : 'row-reverse'}
+                alignItems="center"
+              >
+                <Grid item xs={12} md={6}>
+                  <motion.div
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Typography 
+                      variant="h3" 
+                      component="h2" 
+                      gutterBottom
+                      sx={{ color: theme.palette.primary.main }}
+                    >
                       {service.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" paragraph>
-                      {service.shortDescription}
+                    <Typography variant="body1" paragraph>
+                      {service.fullDescription}
                     </Typography>
-                    <Button 
-                      component={RouterLink} 
-                      to={`#${service.id}`}
-                      variant="text" 
-                      color="primary"
-                      endIcon={<ArrowForwardIcon />}
-                      sx={{ mt: 'auto' }}
+                    
+                    <Typography variant="h6" gutterBottom sx={{ mt: 4 }}>
+                      Benefits:
+                    </Typography>
+                    <List>
+                      {service.benefits.map((benefit, i) => (
+                        <ListItem key={i} disableGutters sx={{ py: 0.5 }}>
+                          <ListItemIcon sx={{ minWidth: 36 }}>
+                            <CheckIcon color="secondary" />
+                          </ListItemIcon>
+                          <ListItemText primary={benefit} />
+                        </ListItem>
+                      ))}
+                    </List>
+                    
+                    <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
+                      Our Process:
+                    </Typography>
+                    <List>
+                      {service.process.map((step, i) => (
+                        <ListItem key={i} disableGutters sx={{ py: 0.5 }}>
+                          <ListItemText 
+                            primary={
+                              <Box sx={{ display: 'flex' }}>
+                                <Typography 
+                                  component="span" 
+                                  sx={{ 
+                                    color: theme.palette.secondary.main,
+                                    fontWeight: 600,
+                                    width: 24,
+                                    mr: 1
+                                  }}
+                                >
+                                  {i+1}.
+                                </Typography>
+                                {step}
+                              </Box>
+                            } 
+                          />
+                        </ListItem>
+                      ))}
+                    </List>
+                    
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                      Learn More
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
-
-        {/* Detailed Service Sections */}
-        {services.map((service, index) => (
-          <Box 
-            key={service.id} 
-            id={service.id}
-            sx={{ 
-              scrollMarginTop: '100px',
-              mb: 10
-            }}
-          >
-            <Grid 
-              container 
-              spacing={6} 
-              direction={index % 2 === 0 ? 'row' : 'row-reverse'}
-              alignItems="center"
-            >
-              <Grid item xs={12} md={6}>
-                <motion.div
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Typography 
-                    variant="h3" 
-                    component="h2" 
-                    gutterBottom
-                    sx={{ color: theme.palette.primary.main }}
+                      <Button 
+                        variant="contained" 
+                        color="primary"
+                        component={RouterLink}
+                        to="/contact"
+                        sx={{ mt: 4 }}
+                      >
+                        Schedule a Consultation
+                      </Button>
+                    </motion.div>
+                  </motion.div>
+                </Grid>
+                
+                <Grid item xs={12} md={6}>
+                  <motion.div
+                    initial={{ opacity: 0, x: index % 2 === 0 ? 20 : -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
                   >
-                    {service.title}
-                  </Typography>
-                  <Typography variant="body1" paragraph>
-                    {service.fullDescription}
-                  </Typography>
-                  
-                  <Typography variant="h6" gutterBottom sx={{ mt: 4 }}>
-                    Benefits:
-                  </Typography>
-                  <List>
-                    {service.benefits.map((benefit, i) => (
-                      <ListItem key={i} disableGutters sx={{ py: 0.5 }}>
-                        <ListItemIcon sx={{ minWidth: 36 }}>
-                          <CheckIcon color="secondary" />
-                        </ListItemIcon>
-                        <ListItemText primary={benefit} />
-                      </ListItem>
-                    ))}
-                  </List>
-                  
-                  <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
-                    Our Process:
-                  </Typography>
-                  <List>
-                    {service.process.map((step, i) => (
-                      <ListItem key={i} disableGutters sx={{ py: 0.5 }}>
-                        <ListItemText 
-                          primary={
-                            <Box sx={{ display: 'flex' }}>
-                              <Typography 
-                                component="span" 
-                                sx={{ 
-                                  color: theme.palette.secondary.main,
-                                  fontWeight: 600,
-                                  width: 24,
-                                  mr: 1
-                                }}
-                              >
-                                {i+1}.
-                              </Typography>
-                              {step}
-                            </Box>
-                          } 
-                        />
-                      </ListItem>
-                    ))}
-                  </List>
-                  
-                  <Button 
-                    variant="contained" 
-                    color="primary"
-                    component={RouterLink}
-                    to="/contact"
-                    sx={{ mt: 4 }}
-                  >
-                    Schedule a Consultation
-                  </Button>
-                </motion.div>
+                    <Box 
+                      component="img"
+                      src={service.image}
+                      alt={service.title}
+                      sx={{
+                        width: '100%',
+                        height: 'auto',
+                        borderRadius: 4,
+                        boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
+                      }}
+                    />
+                  </motion.div>
+                </Grid>
               </Grid>
               
-              <Grid item xs={12} md={6}>
-                <motion.div
-                  initial={{ opacity: 0, x: index % 2 === 0 ? 20 : -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Box 
-                    component="img"
-                    src={service.image}
-                    alt={service.title}
-                    sx={{
-                      width: '100%',
-                      height: 'auto',
-                      borderRadius: 4,
-                      boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
-                    }}
-                  />
-                </motion.div>
-              </Grid>
-            </Grid>
-            
-            {index < services.length - 1 && (
-              <Divider sx={{ my: 6 }} />
-            )}
-          </Box>
-        ))}
+              {index < services.length - 1 && (
+                <Divider sx={{ my: 6 }} />
+              )}
+            </Box>
+          ))}
 
-        {/* CTA Section */}
-        <Box 
-          sx={{ 
-            mt: 6, 
-            p: 6, 
-            textAlign: 'center',
-            backgroundColor: theme.palette.primary.main,
-            color: 'white',
-            borderRadius: 4
-          }}
-        >
-          <Typography variant="h4" gutterBottom>
-            Ready to Transform Your Smile?
-          </Typography>
-          <Typography variant="body1" sx={{ mb: 4, maxWidth: 700, mx: 'auto' }}>
-            Contact us today to schedule a consultation with Dr. Pedro. We'll discuss your dental concerns,
-            goals, and create a personalized treatment plan just for you.
-          </Typography>
-          <Button 
-            variant="contained" 
-            color="secondary" 
-            component={RouterLink} 
-            to="/contact"
-            size="large"
+          {/* CTA Section */}
+          <Box 
             sx={{ 
-              px: 4, 
-              py: 1.5,
-              fontSize: '1.1rem'
+              mt: 6, 
+              p: 6, 
+              textAlign: 'center',
+              backgroundColor: theme.palette.primary.light,
+              borderRadius: 4,
+              color: 'white'
             }}
           >
-            Book Your Consultation
-          </Button>
+            <Typography variant="h3" component="h2" gutterBottom>
+              Ready to Transform Your Smile?
+            </Typography>
+            <Typography variant="h6" sx={{ mb: 4, maxWidth: '800px', mx: 'auto' }}>
+              Schedule a consultation with Dr. Pedro to discuss your dental implant and restoration options.
+            </Typography>
+            <Button 
+              variant="contained" 
+              color="secondary" 
+              component={RouterLink} 
+              to="/contact"
+              size="large"
+              sx={{ 
+                px: 4, 
+                py: 1.5,
+                fontSize: '1.1rem'
+              }}
+            >
+              Book Your Consultation
+            </Button>
+          </Box>
         </Box>
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 };
 

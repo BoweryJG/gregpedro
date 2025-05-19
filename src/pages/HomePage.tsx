@@ -22,25 +22,25 @@ const HomePage: React.FC = () => {
   const services = [
     {
       title: 'Dental Implants',
-      description: 'Replace missing teeth with permanent, natural-looking dental implants that function just like your natural teeth.',
+      description: 'Replace missing teeth with permanent, natural-looking dental implants that function just like your natural teeth, personally crafted by Dr. Pedro.',
       image: '/images/services/dental-implants.jpg',
       link: '/services/dental-implants'
     },
     {
       title: 'Implant Restoration',
-      description: 'Restore damaged implants with our expert care, ensuring your smile stays beautiful and functional.',
+      description: 'Restore damaged implants with our expert care, ensuring your smile stays beautiful and functional with Dr. Pedro\'s artistic approach.',
       image: '/images/services/implant-restoration.jpg',
       link: '/services/implant-restoration'
     },
     {
       title: 'Full Mouth Reconstruction',
-      description: 'Transform your smile completely with our comprehensive full mouth reconstruction services.',
+      description: 'Transform your smile completely with our comprehensive full mouth reconstruction services, combining art and science for extraordinary results.',
       image: '/images/services/full-mouth.jpg',
       link: '/services/full-mouth-reconstruction'
     },
     {
       title: 'Cosmetic Dentistry',
-      description: 'Enhance your smile with our range of cosmetic dental procedures designed to give you the perfect smile.',
+      description: 'Enhance your smile with our range of cosmetic dental procedures designed to give you the perfect smile with Dr. Pedro\'s championship-level precision.',
       image: '/images/services/cosmetic-dentistry.jpg',
       link: '/services/cosmetic-dentistry'
     }
@@ -49,21 +49,21 @@ const HomePage: React.FC = () => {
   // Sample testimonials data
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      quote: 'Dr. Pedro and his team changed my life! After years of dental issues, I finally have a smile I can be proud of.',
+      name: 'Maria S.',
+      quote: 'After years of dental anxiety, I finally found Dr. Pedro. His gentle approach and incredible skill gave me back my smile and my confidence. The massage chairs and Netflix were unexpected bonuses that made the experience actually enjoyable!',
       rating: 5,
       date: 'March 15, 2025'
     },
     {
-      name: 'Michael Rodriguez',
-      quote: 'The implant procedure was much easier than I expected. Dr. Pedro made sure I was comfortable throughout the entire process.',
+      name: 'James T.',
+      quote: 'As a former dental phobic, I never thought I\'d look forward to dental appointments. Dr. Pedro changed everything with his painless injections and genuine care. My implants look and feel completely natural—better than my original teeth!',
       rating: 5,
       date: 'February 3, 2025'
     },
     {
-      name: 'Emily Chen',
-      quote: 'I was terrified of dental work until I met Dr. Pedro. His gentle approach and clear explanations put me at ease.',
-      rating: 4.5,
+      name: 'Robert K.',
+      quote: 'Dr. Pedro\'s sports background shows in his precision and teamwork approach. His staff is amazing, and the results of my full-mouth restoration exceeded all my expectations. Worth every penny.',
+      rating: 5,
       date: 'April 22, 2025'
     }
   ];
@@ -72,9 +72,9 @@ const HomePage: React.FC = () => {
     <Box>
       {/* Hero Section */}
       <HeroSection
-        title="Expert Dental Implants in Staten Island"
-        subtitle="Restore your smile with the highest quality dental implant care from Dr. Greg Pedro"
-        ctaText="Book a Consultation"
+        title="TRANSFORMING SMILES, CHANGING LIVES"
+        subtitle="DR. GREG PEDRO: STATEN ISLAND'S PREMIER IMPLANT SPECIALIST | Where Artistry Meets Advanced Dental Science"
+        ctaText="Begin Your Smile Journey"
         ctaLink="/contact"
         backgroundImage="/images/hero-background.jpg"
       />
@@ -91,16 +91,16 @@ const HomePage: React.FC = () => {
                 transition={{ duration: 0.5 }}
               >
                 <Typography variant="h2" component="h2" gutterBottom>
-                  Welcome to Staten Island Implant Dr
+                  MEET DR. GREG PEDRO
                 </Typography>
                 <Typography variant="h5" color="primary" gutterBottom>
-                  Your Trusted Dental Implant Specialist
+                  A STATEN ISLAND LEGEND DEDICATED TO YOUR SMILE
                 </Typography>
                 <Typography variant="body1" paragraph sx={{ mb: 3 }}>
-                  Dr. Greg Pedro has dedicated his career to providing exceptional dental implant services to the Staten Island community. With advanced training and years of experience, Dr. Pedro delivers life-changing results for patients seeking to restore their smiles.
+                  Born and raised on Staten Island, Dr. Greg Pedro is more than just a dental specialist—he's a hometown hero with a remarkable journey. From leading St. Peter's to Staten Island's only AA city basketball championship to becoming an ADA-Certified Prosthodontist with over 30 years of experience, Dr. Pedro brings the same championship-level dedication to your dental care.
                 </Typography>
                 <Typography variant="body1" paragraph>
-                  Our state-of-the-art facility is equipped with the latest technology to ensure precise, comfortable, and successful implant procedures. We believe in creating personalized treatment plans that address each patient's unique needs and goals.
+                  After graduating from Temple University's prestigious dental program in 1994, Dr. Pedro has dedicated his career to mastering the art and science of dental implants and prosthodontics. His exceptional training includes over 600 hours of specialized continuing education, advanced certification in smile design and dental implantology, specialized TMJ/TMD treatment expertise, and pioneering techniques in aesthetic dentistry.
                 </Typography>
                 <Button 
                   variant="contained" 
@@ -110,7 +110,7 @@ const HomePage: React.FC = () => {
                   size="large"
                   sx={{ mt: 2 }}
                 >
-                  Learn More About Us
+                  Learn More About Dr. Pedro
                 </Button>
               </motion.div>
             </Grid>
@@ -143,16 +143,16 @@ const HomePage: React.FC = () => {
         <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center', mb: 6 }}>
             <Typography variant="h2" component="h2" gutterBottom>
-              Our Services
+              EXCEPTIONAL CARE, EXTRAORDINARY RESULTS
             </Typography>
             <Typography variant="h6" sx={{ maxWidth: 700, mx: 'auto' }}>
-              We offer a comprehensive range of dental implant and restorative services to meet all your dental needs
+              Dr. Pedro's approach to dental implants goes beyond standard care—it's a transformative journey using state-of-the-art technology and his artistic eye to create solutions that are indistinguishable from natural teeth.
             </Typography>
           </Box>
 
           <Grid container spacing={4}>
             {services.map((service, index) => (
-              <Grid item={true} xs={12} sm={6} md={3} key={index}>
+              <Grid item xs={12} sm={6} md={3} key={index}>
                 <ServiceCard {...service} />
               </Grid>
             ))}
@@ -166,149 +166,120 @@ const HomePage: React.FC = () => {
               to="/services"
               size="large"
             >
-              View All Services
+              Explore All Services
             </Button>
           </Box>
         </Container>
       </Box>
 
-      {/* Why Choose Us Section */}
+      {/* Patient Experience Section */}
       <Container maxWidth="lg">
         <Box sx={{ py: 8 }}>
           <Typography variant="h2" component="h2" gutterBottom align="center">
-            Why Choose Us
+            THE ABOUT FACE DIFFERENCE
           </Typography>
           <Typography variant="h6" align="center" sx={{ mb: 6, maxWidth: 700, mx: 'auto' }}>
-            We're committed to providing the highest quality dental care with a personalized approach
+            At Dr. Pedro's practice, we've revolutionized the dental experience. Our patients—even those with severe dental anxiety—consistently rate their visits as surprisingly comfortable and stress-free.
           </Typography>
 
           <Grid container spacing={4}>
-            {[
-              {
-                title: 'Expertise & Experience',
-                description: 'Dr. Pedro has specialized training and extensive experience in dental implant procedures.',
-                icon: '🏆'
-              },
-              {
-                title: 'Advanced Technology',
-                description: 'Our practice is equipped with state-of-the-art technology for precise and comfortable treatments.',
-                icon: '🔬'
-              },
-              {
-                title: 'Patient-Centered Care',
-                description: 'We prioritize your comfort and satisfaction throughout your entire treatment journey.',
-                icon: '❤️'
-              },
-              {
-                title: 'Comprehensive Solutions',
-                description: 'From single implants to full mouth reconstruction, we offer complete dental implant services.',
-                icon: '✓'
-              }
-            ].map((item, index) => (
-              <Grid item={true} xs={12} sm={6} md={3} key={index}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <Card 
-                    elevation={0}
-                    sx={{ 
-                      height: '100%',
-                      backgroundColor: 'transparent',
-                      textAlign: 'center',
-                      p: 2
-                    }}
-                  >
-                    <Typography variant="h1" sx={{ mb: 2, fontSize: '3rem' }}>
-                      {item.icon}
-                    </Typography>
-                    <CardContent>
-                      <Typography variant="h5" gutterBottom>
-                        {item.title}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {item.description}
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </Grid>
-            ))}
+            <Grid item xs={12} md={4}>
+              <Card elevation={2} sx={{ height: '100%', transition: '0.3s', '&:hover': { transform: 'translateY(-5px)', boxShadow: 6 } }}>
+                <CardContent sx={{ p: 4 }}>
+                  <Box sx={{ textAlign: 'center', mb: 2 }}>
+                    <Box sx={{ color: 'primary.main', fontSize: 50 }}>
+                      {/* Icon placeholder */}
+                      ✓
+                    </Box>
+                  </Box>
+                  <Typography variant="h5" component="h3" gutterBottom align="center">
+                    Luxurious Comfort
+                  </Typography>
+                  <Typography variant="body1" align="center">
+                    Massage chairs that soothe away tension, Netflix viewing during your treatment, and warm towel service to conclude your visit.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Card elevation={2} sx={{ height: '100%', transition: '0.3s', '&:hover': { transform: 'translateY(-5px)', boxShadow: 6 } }}>
+                <CardContent sx={{ p: 4 }}>
+                  <Box sx={{ textAlign: 'center', mb: 2 }}>
+                    <Box sx={{ color: 'primary.main', fontSize: 50 }}>
+                      {/* Icon placeholder */}
+                      ✓
+                    </Box>
+                  </Box>
+                  <Typography variant="h5" component="h3" gutterBottom align="center">
+                    Advanced Technology
+                  </Typography>
+                  <Typography variant="body1" align="center">
+                    Fiber-optic soft-sound handpieces for quieter procedures and Biolase laser technology for minimally invasive treatments.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Card elevation={2} sx={{ height: '100%', transition: '0.3s', '&:hover': { transform: 'translateY(-5px)', boxShadow: 6 } }}>
+                <CardContent sx={{ p: 4 }}>
+                  <Box sx={{ textAlign: 'center', mb: 2 }}>
+                    <Box sx={{ color: 'primary.main', fontSize: 50 }}>
+                      {/* Icon placeholder */}
+                      ✓
+                    </Box>
+                  </Box>
+                  <Typography variant="h5" component="h3" gutterBottom align="center">
+                    Compassionate Care
+                  </Typography>
+                  <Typography variant="body1" align="center">
+                    Dr. Pedro's kind, caring and compassionate chairside manner gives his patients the confidence they need to pursue the treatments they deserve.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
           </Grid>
         </Box>
       </Container>
 
       {/* Testimonials Section */}
-      <Box sx={{ py: 8, backgroundColor: theme.palette.primary.main, color: 'white' }}>
+      <Box sx={{ py: 8, backgroundColor: 'grey.50' }}>
         <Container maxWidth="lg">
-          <Box sx={{ textAlign: 'center', mb: 6 }}>
-            <Typography variant="h2" component="h2" gutterBottom>
-              Patient Testimonials
-            </Typography>
-            <Typography variant="h6">
-              Don't just take our word for it - hear what our patients have to say
-            </Typography>
-          </Box>
+          <Typography variant="h2" component="h2" gutterBottom align="center">
+            STORIES OF TRANSFORMATION
+          </Typography>
+          <Typography variant="h6" align="center" sx={{ mb: 6, maxWidth: 700, mx: 'auto' }}>
+            Hear from our patients who have experienced the life-changing results of Dr. Pedro's exceptional care
+          </Typography>
 
           <Grid container spacing={4}>
             {testimonials.map((testimonial, index) => (
-              <Grid item={true} xs={12} md={4} key={index}>
+              <Grid item xs={12} md={4} key={index}>
                 <TestimonialCard {...testimonial} />
               </Grid>
             ))}
           </Grid>
-
-          <Box sx={{ textAlign: 'center', mt: 6 }}>
-            <Button 
-              variant="contained" 
-              color="secondary" 
-              component={RouterLink} 
-              to="/testimonials"
-              size="large"
-            >
-              Read More Testimonials
-            </Button>
-          </Box>
         </Container>
       </Box>
 
       {/* CTA Section */}
       <Container maxWidth="md">
-        <Box 
-          sx={{ 
-            py: 8, 
-            textAlign: 'center'
-          }}
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+        <Box sx={{ py: 10, textAlign: 'center' }}>
+          <Typography variant="h2" component="h2" gutterBottom>
+            YOUR NEW SMILE JOURNEY BEGINS HERE
+          </Typography>
+          <Typography variant="h6" sx={{ mb: 4, maxWidth: 700, mx: 'auto' }}>
+            Schedule your complimentary consultation with Dr. Pedro today and discover why patients from across Staten Island and beyond trust their smiles to Staten Island's premier implant specialist.
+          </Typography>
+          <Button 
+            variant="contained" 
+            color="primary" 
+            component={RouterLink} 
+            to="/contact"
+            size="large"
+            sx={{ py: 1.5, px: 4, fontSize: '1.1rem' }}
           >
-            <Typography variant="h3" component="h2" gutterBottom>
-              Ready to Transform Your Smile?
-            </Typography>
-            <Typography variant="h6" sx={{ mb: 4, maxWidth: 700, mx: 'auto' }}>
-              Schedule a consultation with Dr. Pedro to discuss your dental implant options and start your journey to a confident smile.
-            </Typography>
-            <Button 
-              variant="contained" 
-              color="secondary" 
-              component={RouterLink} 
-              to="/contact"
-              size="large"
-              sx={{ 
-                px: 6, 
-                py: 1.5,
-                fontSize: '1.1rem'
-              }}
-            >
-              Book Your Consultation
-            </Button>
-          </motion.div>
+            BOOK YOUR CONSULTATION
+          </Button>
         </Box>
       </Container>
     </Box>
