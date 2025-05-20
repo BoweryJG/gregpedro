@@ -363,7 +363,7 @@ const HomePage: React.FC = () => {
               <Grid item xs={12} md={4}>
                 <Box
                   component="img"
-                  src="/images/yomi-patient-testimonial.jpg"
+                  src={require('../assets/patient1.png')}
                   alt="Happy Yomi Dental Implant Patient"
                   sx={{
                     width: '100%',
