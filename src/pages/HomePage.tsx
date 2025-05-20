@@ -205,7 +205,7 @@ const HomePage: React.FC = () => {
               >
                 <Box
                   component="img"
-                  src="/images/yomi-robot-procedure.jpg"
+                  src={require('../assets/Yomi.jpg')}
                   alt="Yomi Robotic Dental Implant System"
                   sx={{
                     width: '100%',
