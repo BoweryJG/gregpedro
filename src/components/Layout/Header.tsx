@@ -6,18 +6,16 @@ import {
   Button, 
   Box, 
   IconButton, 
-  Drawer, 
-  List, 
-  ListItem, 
+  Drawer,
+  List,
+  ListItem,
   ListItemButton,
-  useMediaQuery, 
   Container,
   useTheme
 } from '@mui/material';
 import {
   Menu as MenuIcon,
   Close as CloseIcon,
-  Phone as PhoneIcon,
   HomeOutlined,
   MedicalServicesOutlined,
   PrecisionManufacturingOutlined,

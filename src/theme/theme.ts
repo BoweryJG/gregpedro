@@ -1,4 +1,4 @@
-import { createTheme, ThemeOptions } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import { alpha } from '@mui/material';
 
 // Extend the Material-UI theme to include our custom colors
