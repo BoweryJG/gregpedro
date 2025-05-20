@@ -27,8 +27,8 @@ This is the official website for Dr. Greg Pedro's dental practice, Staten Island
 
 ### Prerequisites
 
-- Node.js (v14 or later)
-- npm or yarn
+ - Node.js 18 (see `.nvmrc` for the recommended version)
+ - npm or yarn
 - Supabase account
 - Open Router API key
 
@@ -47,12 +47,17 @@ cd dr-greg-pedro-site
 npm install
 ```
 
-3. Create a `.env` file in the root directory with the following variables:
+3. Copy `.env.example` to `.env` and fill in your keys:
 
 ```
-REACT_APP_SUPABASE_URL=your_supabase_url
-REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
-REACT_APP_OPENROUTER_API_KEY=your_openrouter_api_key
+cp .env.example .env
+```
+Then edit `.env` and provide values for the following variables:
+
+```
+REACT_APP_SUPABASE_URL=<your_supabase_url>
+REACT_APP_SUPABASE_ANON_KEY=<your_supabase_anon_key>
+REACT_APP_OPENROUTER_API_KEY=<your_openrouter_api_key>
 ```
 
 4. Start the development server
