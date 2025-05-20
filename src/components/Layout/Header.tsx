@@ -10,14 +10,12 @@ import {
   List, 
   ListItem, 
   ListItemButton,
-  useMediaQuery, 
   Container,
   useTheme
 } from '@mui/material';
 import {
   Menu as MenuIcon,
   Close as CloseIcon,
-  Phone as PhoneIcon,
   HomeOutlined,
   MedicalServicesOutlined,
   PrecisionManufacturingOutlined,

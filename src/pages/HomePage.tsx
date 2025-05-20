@@ -7,7 +7,6 @@ import {
   Button, 
   Card, 
   CardContent,
-  useTheme,
   List,
   ListItem,
   ListItemIcon,
@@ -19,13 +18,11 @@ import {
   ArrowForward as ArrowForwardIcon
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
-import HeroSection from '../components/UI/HeroSection';
 import ServiceCard from '../components/UI/ServiceCard';
 import TestimonialCard from '../components/UI/TestimonialCard';
 import { Link as RouterLink } from 'react-router-dom';
 
 const HomePage: React.FC = () => {
-  const theme = useTheme();
 
   // Sample services data
   const services = [

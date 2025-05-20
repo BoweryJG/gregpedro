@@ -10,7 +10,6 @@ import {
   ListItemText,
   Card,
   CardContent,
-  CardMedia,
   Accordion,
   AccordionSummary,
   AccordionDetails,
