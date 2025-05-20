@@ -2,13 +2,13 @@ import React from 'react';
 import { 
   Card, 
   CardContent, 
-  CardMedia, 
   Typography, 
   Button, 
   Box,
   CardActionArea,
   CardActions
 } from '@mui/material';
+import CardMedia from '@mui/material/CardMedia';
 import { ArrowForward as ArrowForwardIcon } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
