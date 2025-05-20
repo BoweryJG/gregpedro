@@ -76,51 +76,6 @@ const HomePage: React.FC = () => {
 
   return (
     <Box>
-      {/* Hero Section */}
-      <Box
-        sx={{
-          position: 'relative',
-          height: '100vh',
-          minHeight: '600px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: 'black',
-          color: 'white',
-          textAlign: 'center',
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/hero-background.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <Container maxWidth="md">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Typography variant="h1" component="h1" gutterBottom>
-              DR. GREG PEDRO
-            </Typography>
-            <Typography variant="h4" gutterBottom>
-              PROSTHODONTIST & DENTAL IMPLANT SPECIALIST
-            </Typography>
-            <Box sx={{ display: 'inline-block', bgcolor: 'secondary.main', color: 'white', px: 2, py: 1, borderRadius: 1, mt: 2, mb: 4 }}>
-              Staten Island's ONLY Provider of Yomi Robotic Dental Implant Technology
-            </Box>
-            <Button
-              variant="contained"
-              color="primary"
-              size="large"
-              component={RouterLink}
-              to="/contact"
-              sx={{ mt: 2, px: 4, py: 1.5 }}
-            >
-              SCHEDULE A CONSULTATION
-            </Button>
-          </motion.div>
-        </Container>
-      </Box>
 
       {/* Welcome Section */}
       <Container maxWidth="lg">
