@@ -121,7 +121,7 @@ const HomePage: React.FC = () => {
               >
                 <Box 
                   component="img"
-                  src="/images/doctor-office.jpg"
+                  src={require('../assets/GPaboutGP.jpg')}
                   alt="Dr. Greg Pedro's Office"
                   sx={{
                     width: '100%',
