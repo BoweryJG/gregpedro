@@ -109,8 +109,8 @@ const ContactPage: React.FC = () => {
     {
       icon: <LocationIcon fontSize="large" />,
       title: 'Location',
-      content: '123 Main Street, Staten Island, NY 10301',
-      action: 'https://maps.google.com/?q=123+Main+Street,+Staten+Island,+NY+10301'
+      content: '4300 Hylan Blvd, Staten Island, NY 10312',
+      action: 'https://maps.google.com/?q=4300+Hylan+Blvd,+Staten+Island,+NY+10312'
     }
   ];
   

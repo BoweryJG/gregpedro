@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
               <LocationIcon sx={{ mr: 1 }} />
               <Typography variant="body2">
-                123 Dental Ave, Staten Island, NY 10301
+                4300 Hylan Blvd, Staten Island, NY 10312
               </Typography>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
