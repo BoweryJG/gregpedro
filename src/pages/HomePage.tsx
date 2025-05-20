@@ -100,14 +100,14 @@ const HomePage: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <Typography variant="h1" component="h1" gutterBottom>
-              DR. GREG PEDRO
+              Dr. Gregory Pedro
             </Typography>
             <Typography variant="h4" gutterBottom>
-              PROSTHODONTIST & DENTAL IMPLANT SPECIALIST
+              Prosthodontist & Dental Implant Specialist
             </Typography>
-            <Box sx={{ display: 'inline-block', bgcolor: 'secondary.main', color: 'white', px: 2, py: 1, borderRadius: 1, mt: 2, mb: 4 }}>
-              Staten Island's ONLY Provider of Yomi Robotic Dental Implant Technology
-            </Box>
+            <Typography variant="h5" gutterBottom>
+              Advanced TMJ & Aesthetic Solutions
+            </Typography>
             <Button
               variant="contained"
               color="primary"

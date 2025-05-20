@@ -111,7 +111,7 @@ const drawerMenuItems: MenuItemType[] = [
       letterSpacing: '-0.01em',
     }}
   >
-    Dr. Greg Pedro
+    Dr. Gregory Pedro
   </Typography>
   <Typography
     variant="caption"
@@ -125,7 +125,21 @@ const drawerMenuItems: MenuItemType[] = [
       display: { xs: 'none', md: 'block' }
     }}
   >
-    PROSTHODONTIST & IMPLANT SPECIALIST
+    PROSTHODONTIST & DENTAL IMPLANT SPECIALIST
+  </Typography>
+  <Typography
+    variant="caption"
+    sx={{
+      ml: 2,
+      color: '#1E293B',
+      opacity: 0.7,
+      fontSize: '0.7rem',
+      letterSpacing: '0.03em',
+      fontWeight: 500,
+      display: { xs: 'none', md: 'block' }
+    }}
+  >
+    ADVANCED TMJ & AESTHETIC SOLUTIONS
   </Typography>
 </Box>
 
