@@ -29,25 +29,25 @@ const HomePage: React.FC = () => {
     {
       title: 'Dental Implants',
       description: 'Replace missing teeth with permanent, natural-looking dental implants that function just like your natural teeth, personally crafted by Dr. Pedro.',
-      image: '/images/services/dental-implants.jpg',
+      image: require('../assets/dentalimplants.gif'),
       link: '/services/dental-implants'
     },
     {
       title: 'Implant Restoration',
       description: 'Restore damaged implants with our expert care, ensuring your smile stays beautiful and functional with Dr. Pedro\'s artistic approach.',
-      image: '/images/services/implant-restoration.jpg',
+      image: require('../assets/implantrestoration2.gif'),
       link: '/services/implant-restoration'
     },
     {
       title: 'Full Mouth Reconstruction',
       description: 'Transform your smile completely with our comprehensive full mouth reconstruction services, combining art and science for extraordinary results.',
-      image: '/images/services/full-mouth.jpg',
+      image: require('../assets/fullmouthreconstruction.gif'),
       link: '/services/full-mouth-reconstruction'
     },
     {
       title: 'Cosmetic Dentistry',
       description: 'Enhance your smile with our range of cosmetic dental procedures designed to give you the perfect smile with Dr. Pedro\'s championship-level precision.',
-      image: '/images/services/cosmetic-dentistry.jpg',
+      image: require('../assets/cosmeticdenstistry.gif'),
       link: '/services/cosmetic-dentistry'
     }
   ];
