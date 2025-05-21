@@ -9,6 +9,7 @@ import Layout from './components/Layout/Layout';
 // Pages
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
+import ServiceDetailPage from './pages/ServiceDetailPage';
 import ContactPage from './pages/ContactPage';
 import YomiTechnologyPage from './pages/YomiTechnologyPage';
 
@@ -24,6 +25,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/:serviceId" element={<ServiceDetailPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/yomi-technology" element={<YomiTechnologyPage />} />
             {/* Add more routes as needed */}
