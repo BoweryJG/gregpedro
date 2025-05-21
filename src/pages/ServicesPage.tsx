@@ -46,6 +46,42 @@ const ServicesPage: React.FC = () => {
         'Monitored healing period (osseointegration)',
         'Custom abutment placement designed for your unique smile',
         'Artistically crafted crown attachment for natural aesthetics'
+      ],
+      technology: 'yomi'
+    },
+    {
+      id: 'tmj-treatment',
+      title: 'TMJ Treatment',
+      shortDescription: 'Find relief from TMJ pain and dysfunction with Dr. Pedro\'s specialized treatment options.',
+      fullDescription: 'Temporomandibular Joint (TMJ) disorders can cause significant pain and dysfunction in the jaw joint and muscles. As Staten Island\'s leading TMJ specialist, Dr. Pedro offers comprehensive treatment options to alleviate pain, restore function, and improve overall oral health for those suffering from TMJ disorders. His approach combines advanced diagnostic techniques with personalized treatment plans to address the root cause of your TMJ issues.',
+      image: '/images/services/tmj-treatment.jpg',
+      benefits: [
+        'Relief from jaw pain, headaches, and migraines',
+        'Improved jaw function and range of motion',
+        'Reduced teeth grinding and clenching',
+        'Better sleep quality and overall well-being',
+        'Non-surgical options available for most patients'
+      ],
+      process: [
+        'Comprehensive TMJ evaluation and diagnosis',
+        'Customized treatment plan based on your specific condition',
+        'Implementation of appropriate therapies (oral appliances, Botox, etc.)',
+        'Regular monitoring and adjustments as needed',
+        'Long-term management strategies for lasting relief'
+      ],
+      faq: [
+        {
+          question: 'What causes TMJ disorders?',
+          answer: 'TMJ disorders can be caused by various factors including jaw injury, stress, arthritis, teeth grinding (bruxism), misaligned teeth, dental procedures, connective tissue disorders, tooth loss, and jaw muscle fatigue.'
+        },
+        {
+          question: 'Does TMJ require surgery?',
+          answer: 'TMJ does not always require surgery. In many cases, it can be treated with non-surgical methods such as physical therapy, stress management, pain medication, lifestyle changes, oral splints or guards, or injections. Surgery may be recommended in severe cases.'
+        },
+        {
+          question: 'Is Botox safe for TMJ?',
+          answer: 'Yes, Botox treatment for TMJ is very safe and approved by the American Dental Association (ADA) for TMJ treatment. Relief typically lasts 3-6 months, though some patients experience longer or even permanent success.'
+        }
       ]
     },
     {
@@ -89,6 +125,28 @@ const ServicesPage: React.FC = () => {
         'Strategic implant placement and comfortable temporary restoration',
         'Artistic final restoration placement for natural beauty'
       ]
+    },
+    {
+      id: 'aesthetic-treatments',
+      title: 'Aesthetic Treatments',
+      shortDescription: 'Enhance your facial appearance with our advanced aesthetic treatments including BTL Emface.',
+      fullDescription: 'About Face Dental & Aesthetic Boutique offers cutting-edge aesthetic treatments to complement your beautiful smile. Dr. Pedro has invested in the most sophisticated technologies available to maximize your success with minimal discomfort and downtime. Our aesthetic treatments are designed to enhance your natural beauty and help you look as good as you feel.',
+      image: '/images/services/btl-emface.jpg',
+      benefits: [
+        'Non-surgical facial rejuvenation with advanced technologies',
+        'Reduced fine lines and wrinkles for a more youthful appearance',
+        'Improved skin texture and tone with minimal downtime',
+        'Comprehensive approach combining dental and facial aesthetics',
+        'Treatments performed in a comfortable, spa-like environment'
+      ],
+      process: [
+        'Comprehensive skin analysis using Emage IMAGE PRO technology',
+        'Personalized treatment plan based on your aesthetic goals',
+        'Implementation of appropriate treatments (BTL Emface, etc.)',
+        'Follow-up care and maintenance recommendations',
+        'Ongoing support for long-lasting results'
+      ],
+      technology: 'emface'
     },
     {
       id: 'cosmetic-dentistry',
@@ -385,6 +443,52 @@ const ServicesPage: React.FC = () => {
                       </>
                     )}
                     
+                    {service.id === "tmj-treatment" && (
+                      <>
+                        <Typography variant="h6" gutterBottom sx={{ mt: 4, color: theme.palette.secondary.main, fontWeight: 'bold' }}>
+                          Frequently Asked Questions:
+                        </Typography>
+                        {service.faq && service.faq.map((item, i) => (
+                          <Box key={i} sx={{ mb: 2 }}>
+                            <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                              {item.question}
+                            </Typography>
+                            <Typography variant="body2">
+                              {item.answer}
+                            </Typography>
+                          </Box>
+                        ))}
+                      </>
+                    )}
+                    
+                    {service.id === "aesthetic-treatments" && (
+                      <>
+                        <Typography variant="h6" gutterBottom sx={{ mt: 4, color: theme.palette.secondary.main, fontWeight: 'bold' }}>
+                          BTL Emface Technology:
+                        </Typography>
+                        <Typography variant="body1" paragraph>
+                          Dr. Pedro offers the revolutionary BTL Emface treatment, a non-invasive facial rejuvenation procedure that combines radiofrequency and targeted muscle stimulation to:
+                        </Typography>
+                        <List>
+                          {[
+                            "Lift and tone facial muscles without needles or surgery",
+                            "Reduce fine lines and wrinkles for a more youthful appearance",
+                            "Improve skin texture and elasticity",
+                            "Provide natural-looking results with no downtime",
+                            "Complement your beautiful smile with facial rejuvenation",
+                            "Enhance overall facial aesthetics in a comfortable setting"
+                          ].map((benefit, i) => (
+                            <ListItem key={i} disableGutters sx={{ py: 0.5 }}>
+                              <ListItemIcon sx={{ minWidth: 36 }}>
+                                <CheckIcon color="secondary" />
+                              </ListItemIcon>
+                              <ListItemText primary={benefit} />
+                            </ListItem>
+                          ))}
+                        </List>
+                      </>
+                    )}
+                    
                     <Typography variant="h6" gutterBottom sx={{ mt: 4 }}>
                       Benefits:
                     </Typography>
@@ -472,6 +576,180 @@ const ServicesPage: React.FC = () => {
               )}
             </Box>
           ))}
+
+          {/* Technology Showcase Section */}
+          <Box sx={{ py: 8, backgroundColor: 'background.paper', mt: 6, borderRadius: 4 }}>
+            <Container maxWidth="lg">
+              <Typography variant="h2" component="h2" gutterBottom align="center" sx={{ mb: 6 }}>
+                ADVANCED TECHNOLOGIES
+              </Typography>
+              
+              {/* Yomi Robotic Technology */}
+              <Box sx={{ 
+                display: 'flex', 
+                flexDirection: { xs: 'column', md: 'row' },
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: 4,
+                mb: 8
+              }}>
+                <Box sx={{ flex: 1, textAlign: { xs: 'center', md: 'left' } }}>
+                  <Typography 
+                    variant="h3" 
+                    component="h2" 
+                    sx={{ 
+                      color: 'primary.main',
+                      fontWeight: 'bold',
+                      mb: 2 
+                    }}
+                  >
+                    YOMI ROBOTIC TECHNOLOGY
+                  </Typography>
+                  <Typography 
+                    variant="h5" 
+                    sx={{ 
+                      mb: 2,
+                      fontWeight: 'medium'
+                    }}
+                  >
+                    Staten Island's ONLY Provider of Yomi Robotic Dental Implant Technology
+                  </Typography>
+                  <Typography variant="body1" paragraph>
+                    Dr. Greg Pedro is proud to be the only dentist in Staten Island and one of the few in New York City to offer Yomi Robotic-Guided Dental Implant Surgery. This revolutionary technology delivers unmatched precision, faster recovery times, and exceptional results for dental implant patients.
+                  </Typography>
+                  <List>
+                    {[
+                      "Sub-millimeter precision for optimal implant placement",
+                      "Minimally invasive procedures with less discomfort",
+                      "Faster recovery times and reduced downtime",
+                      "Fewer appointments needed compared to traditional implants",
+                      "Same-day surgery possibilities for qualifying patients",
+                      "Enhanced predictability for superior aesthetic results"
+                    ].map((benefit, i) => (
+                      <ListItem key={i} disableGutters sx={{ py: 0.5 }}>
+                        <ListItemIcon sx={{ minWidth: 36 }}>
+                          <CheckIcon color="secondary" />
+                        </ListItemIcon>
+                        <ListItemText primary={benefit} />
+                      </ListItem>
+                    ))}
+                  </List>
+                  <Button 
+                    variant="contained" 
+                    color="primary" 
+                    component={RouterLink} 
+                    to="#dental-implants"
+                    size="large"
+                    endIcon={<ArrowForwardIcon />}
+                    sx={{ mt: 2 }}
+                  >
+                    Learn More About Yomi
+                  </Button>
+                </Box>
+                <Box 
+                  sx={{ 
+                    flex: 1,
+                    display: 'flex',
+                    justifyContent: 'center'
+                  }}
+                >
+                  <Box 
+                    component="img"
+                    src="/images/services/yomi-robot.jpg"
+                    alt="Yomi Robotic Dental Implant System"
+                    sx={{
+                      maxWidth: '100%',
+                      height: 'auto',
+                      borderRadius: 4,
+                      boxShadow: '0 12px 24px rgba(0,0,0,0.15)'
+                    }}
+                  />
+                </Box>
+              </Box>
+              
+              {/* BTL Emface Technology */}
+              <Box sx={{ 
+                display: 'flex', 
+                flexDirection: { xs: 'column', md: 'row-reverse' },
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: 4
+              }}>
+                <Box sx={{ flex: 1, textAlign: { xs: 'center', md: 'left' } }}>
+                  <Typography 
+                    variant="h3" 
+                    component="h2" 
+                    sx={{ 
+                      color: 'primary.main',
+                      fontWeight: 'bold',
+                      mb: 2 
+                    }}
+                  >
+                    BTL EMFACE TECHNOLOGY
+                  </Typography>
+                  <Typography 
+                    variant="h5" 
+                    sx={{ 
+                      mb: 2,
+                      fontWeight: 'medium'
+                    }}
+                  >
+                    Advanced Facial Rejuvenation Without Surgery
+                  </Typography>
+                  <Typography variant="body1" paragraph>
+                    Dr. Pedro has invested in the most sophisticated aesthetic technologies available, including the revolutionary BTL Emface treatment. This non-invasive facial rejuvenation procedure combines radiofrequency and targeted muscle stimulation to lift, tighten, and tone facial tissues.
+                  </Typography>
+                  <List>
+                    {[
+                      "Non-surgical alternative to traditional facelifts",
+                      "Reduces fine lines and wrinkles",
+                      "Lifts and tones facial muscles",
+                      "No downtime required",
+                      "Comfortable, pain-free treatment",
+                      "Natural-looking results"
+                    ].map((benefit, i) => (
+                      <ListItem key={i} disableGutters sx={{ py: 0.5 }}>
+                        <ListItemIcon sx={{ minWidth: 36 }}>
+                          <CheckIcon color="secondary" />
+                        </ListItemIcon>
+                        <ListItemText primary={benefit} />
+                      </ListItem>
+                    ))}
+                  </List>
+                  <Button 
+                    variant="contained" 
+                    color="primary" 
+                    component={RouterLink} 
+                    to="#aesthetic-treatments"
+                    size="large"
+                    endIcon={<ArrowForwardIcon />}
+                    sx={{ mt: 2 }}
+                  >
+                    Learn More About BTL Emface
+                  </Button>
+                </Box>
+                <Box 
+                  sx={{ 
+                    flex: 1,
+                    display: 'flex',
+                    justifyContent: 'center'
+                  }}
+                >
+                  <Box 
+                    component="img"
+                    src="/images/services/btl-emface.jpg"
+                    alt="BTL Emface Treatment"
+                    sx={{
+                      maxWidth: '100%',
+                      height: 'auto',
+                      borderRadius: 4,
+                      boxShadow: '0 12px 24px rgba(0,0,0,0.15)'
+                    }}
+                  />
+                </Box>
+              </Box>
+            </Container>
+          </Box>
 
           {/* CTA Section */}
           <Box 
