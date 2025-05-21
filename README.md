@@ -47,15 +47,30 @@ cd dr-greg-pedro-site
 npm install
 ```
 
-3. Create a `.env` file in the root directory with the following variables:
+3. Install backend dependencies
+
+```bash
+cd server && npm install && cd ..
+```
+
+4. Create a `.env` file in the root directory with the following variables:
 
 ```
 REACT_APP_SUPABASE_URL=your_supabase_url
 REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
 REACT_APP_OPENROUTER_API_KEY=your_openrouter_api_key
+REACT_APP_API_URL=http://localhost:3001
 ```
 
-4. Start the development server
+5. Copy `server/.env.example` to `server/.env` and update the Supabase credentials.
+
+6. Start the backend server
+
+```bash
+npm run start:server
+```
+
+7. In a separate terminal, start the frontend development server
 
 ```bash
 npm start
@@ -67,6 +82,7 @@ npm start
 - `npm test`: Launches the test runner
 - `npm run build`: Builds the app for production
 - `npm run eject`: Ejects from Create React App
+- `npm run start:server`: Starts the backend server
 
 ## Project Structure
 
@@ -86,7 +102,9 @@ src/
 
 ## Deployment
 
-The website is configured for deployment on Render with a Supabase backend.
+This repository includes a `render.yaml` file for deploying both the frontend and
+backend on Render. The frontend is deployed as a static site while the backend is
+deployed as a Node service connected to Supabase.
 
 ## License
 

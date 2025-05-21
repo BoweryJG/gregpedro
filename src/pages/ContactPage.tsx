@@ -60,30 +60,45 @@ const ContactPage: React.FC = () => {
     }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // In a real application, this would send the form data to the server
-    // For now, we'll just show a success message
-    console.log('Form submitted:', formData);
-    
-    // Show success message
-    setSnackbar({
-      open: true,
-      message: 'Your message has been sent! We will contact you shortly.',
-      severity: 'success'
-    });
-    
-    // Reset form
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      message: '',
-      contactPreference: 'email',
-      appointmentType: 'consultation'
-    });
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || ''}/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      setSnackbar({
+        open: true,
+        message: 'Your message has been sent! We will contact you shortly.',
+        severity: 'success'
+      });
+
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: '',
+        contactPreference: 'email',
+        appointmentType: 'consultation'
+      });
+    } catch (error) {
+      console.error('Failed to submit form:', error);
+      setSnackbar({
+        open: true,
+        message: 'There was an error sending your message. Please try again later.',
+        severity: 'error'
+      });
+    }
   };
   
   const handleCloseSnackbar = () => {
