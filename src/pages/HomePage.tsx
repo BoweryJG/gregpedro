@@ -15,7 +15,10 @@ import {
 } from '@mui/material';
 import {
   Check as CheckIcon,
-  ArrowForward as ArrowForwardIcon
+  ArrowForward as ArrowForwardIcon,
+  Spa as SpaIcon,
+  PrecisionManufacturing as PrecisionManufacturingIcon,
+  Favorite as FavoriteIcon
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import ServiceCard from '../components/UI/ServiceCard';
@@ -276,10 +279,7 @@ const HomePage: React.FC = () => {
               <Card elevation={2} sx={{ height: '100%', transition: '0.3s', '&:hover': { transform: 'translateY(-5px)', boxShadow: 6 } }}>
                 <CardContent sx={{ p: 4 }}>
                   <Box sx={{ textAlign: 'center', mb: 2 }}>
-                    <Box sx={{ color: 'primary.main', fontSize: 50 }}>
-                      {/* Icon placeholder */}
-                      ✓
-                    </Box>
+                    <SpaIcon sx={{ color: 'primary.main', fontSize: 50 }} />
                   </Box>
                   <Typography variant="h5" component="h3" gutterBottom align="center">
                     Luxurious Comfort
@@ -294,10 +294,7 @@ const HomePage: React.FC = () => {
               <Card elevation={2} sx={{ height: '100%', transition: '0.3s', '&:hover': { transform: 'translateY(-5px)', boxShadow: 6 } }}>
                 <CardContent sx={{ p: 4 }}>
                   <Box sx={{ textAlign: 'center', mb: 2 }}>
-                    <Box sx={{ color: 'primary.main', fontSize: 50 }}>
-                      {/* Icon placeholder */}
-                      ✓
-                    </Box>
+                    <PrecisionManufacturingIcon sx={{ color: 'primary.main', fontSize: 50 }} />
                   </Box>
                   <Typography variant="h5" component="h3" gutterBottom align="center">
                     Advanced Technology
@@ -312,10 +309,7 @@ const HomePage: React.FC = () => {
               <Card elevation={2} sx={{ height: '100%', transition: '0.3s', '&:hover': { transform: 'translateY(-5px)', boxShadow: 6 } }}>
                 <CardContent sx={{ p: 4 }}>
                   <Box sx={{ textAlign: 'center', mb: 2 }}>
-                    <Box sx={{ color: 'primary.main', fontSize: 50 }}>
-                      {/* Icon placeholder */}
-                      ✓
-                    </Box>
+                    <FavoriteIcon sx={{ color: 'primary.main', fontSize: 50 }} />
                   </Box>
                   <Typography variant="h5" component="h3" gutterBottom align="center">
                     Compassionate Care

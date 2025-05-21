@@ -1,5 +1,6 @@
-import { 
-  Container, 
+import React from 'react';
+import {
+  Container,
   Typography, 
   Box, 
   Grid, 
@@ -16,10 +17,16 @@ import {
   Divider,
   useTheme
 } from '@mui/material';
-import { 
+import {
   Check as CheckIcon,
   ExpandMore as ExpandMoreIcon,
-  ArrowForward as ArrowForwardIcon
+  ArrowForward as ArrowForwardIcon,
+  PrecisionManufacturing as PrecisionManufacturingIcon,
+  Healing as HealingIcon,
+  AccessTime as AccessTimeIcon,
+  Today as TodayIcon,
+  TrendingUp as TrendingUpIcon,
+  EmojiEmotions as EmojiEmotionsIcon
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { Link as RouterLink } from 'react-router-dom';
@@ -28,36 +35,47 @@ const YomiTechnologyPage: React.FC = () => {
   const theme = useTheme();
 
   // Yomi benefits data
-  const benefits = [
+  interface Benefit {
+    title: string;
+    description: string;
+    icon: React.ElementType;
+  }
+
+  const benefits: Benefit[] = [
     {
       title: "Unmatched Precision",
-      description: "Sub-millimeter accuracy ensures optimal implant placement for better function, aesthetics, and longevity.",
-      icon: "/images/icons/precision.svg"
+      description:
+        "Sub-millimeter accuracy ensures optimal implant placement for better function, aesthetics, and longevity.",
+      icon: PrecisionManufacturingIcon
     },
     {
       title: "Minimally Invasive",
-      description: "Less invasive procedures mean reduced pain, swelling, and faster recovery times for patients.",
-      icon: "/images/icons/minimally-invasive.svg"
+      description:
+        "Less invasive procedures mean reduced pain, swelling, and faster recovery times for patients.",
+      icon: HealingIcon
     },
     {
       title: "Reduced Treatment Time",
-      description: "Fewer appointments needed compared to traditional implants, saving you valuable time.",
-      icon: "/images/icons/time-saving.svg"
+      description:
+        "Fewer appointments needed compared to traditional implants, saving you valuable time.",
+      icon: AccessTimeIcon
     },
     {
       title: "Same-Day Possibilities",
       description: "Many patients can receive implants and temporary restorations in a single visit.",
-      icon: "/images/icons/same-day.svg"
+      icon: TodayIcon
     },
     {
       title: "Improved Success Rates",
-      description: "Robotic precision leads to better implant integration and higher long-term success rates.",
-      icon: "/images/icons/success.svg"
+      description:
+        "Robotic precision leads to better implant integration and higher long-term success rates.",
+      icon: TrendingUpIcon
     },
     {
       title: "Natural-Looking Results",
-      description: "Perfect positioning ensures the most aesthetic and functional outcomes for your smile.",
-      icon: "/images/icons/aesthetic.svg"
+      description:
+        "Perfect positioning ensures the most aesthetic and functional outcomes for your smile.",
+      icon: EmojiEmotionsIcon
     }
   ];
 
@@ -344,12 +362,9 @@ const YomiTechnologyPage: React.FC = () => {
                         mb: 2,
                         color: 'primary.main'
                       }}>
-                        <Box 
-                          component="img"
-                          src={benefit.icon}
-                          alt={benefit.title}
-                          sx={{ width: 48, height: 48, mr: 2 }}
-                        />
+                        <Box sx={{ mr: 2, display: 'flex', alignItems: 'center' }}>
+                          {React.createElement(benefit.icon, { sx: { fontSize: 48 } })}
+                        </Box>
                         <Typography variant="h5" component="h3" sx={{ fontWeight: 'bold' }}>
                           {benefit.title}
                         </Typography>
