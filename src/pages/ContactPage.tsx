@@ -97,8 +97,8 @@ const ContactPage: React.FC = () => {
     {
       icon: <PhoneIcon fontSize="large" />,
       title: 'Phone',
-      content: '(123) 456-7890',
-      action: 'tel:+1234567890'
+      content: '(929) 242-4535',
+      action: 'tel:+19292424535'
     },
     {
       icon: <EmailIcon fontSize="large" />,
