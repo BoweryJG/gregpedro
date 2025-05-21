@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
               <IconButton color="inherit" aria-label="Facebook" component="a" href="https://facebook.com" target="_blank">
                 <FacebookIcon />
               </IconButton>
-              <IconButton color="inherit" aria-label="Instagram" component="a" href="https://instagram.com" target="_blank">
+              <IconButton color="inherit" aria-label="Instagram" component="a" href="https://instagram.com/GregPedroMD" target="_blank">
                 <InstagramIcon />
               </IconButton>
               <IconButton color="inherit" aria-label="Twitter" component="a" href="https://twitter.com" target="_blank">
