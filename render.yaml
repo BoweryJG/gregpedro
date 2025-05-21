@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: gregpedro-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+  - type: web
+    name: gregpedro-backend
+    env: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: PORT
+        value: 3001
