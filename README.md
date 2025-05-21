@@ -53,6 +53,8 @@ npm install
 REACT_APP_SUPABASE_URL=your_supabase_url
 REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
 REACT_APP_OPENROUTER_API_KEY=your_openrouter_api_key
+REACT_APP_GOOGLE_CLIENT_ID=your_google_client_id
+REACT_APP_GOOGLE_API_KEY=your_google_api_key
 ```
 
 4. Start the development server

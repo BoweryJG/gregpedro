@@ -24,6 +24,7 @@ import {
   AccessTime as TimeIcon 
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
+import GoogleMeetConsultation from '../components/Consultation/GoogleMeetConsultation';
 
 const ContactPage: React.FC = () => {
   const theme = useTheme();
@@ -397,7 +398,10 @@ const ContactPage: React.FC = () => {
             </motion.div>
           </Grid>
         </Grid>
-        
+
+        {/* Virtual Consultation Button */}
+        <GoogleMeetConsultation />
+
         {/* Map Section */}
         <Box sx={{ mt: 8 }}>
           <Typography variant="h4" gutterBottom align="center" sx={{ mb: 4 }}>
