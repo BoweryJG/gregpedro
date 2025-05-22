@@ -38,13 +38,7 @@ exports.handler = async (event, context) => {
     }
 
     // Get the API key from environment variables - try multiple possible environment variable names
-    let apiKey = process.env.OPENROUTER_API_KEY || process.env.REACT_APP_OPENROUTER_API_KEY;
-    
-    // If still no API key, try to use the hardcoded one from .env.local for testing
-    if (!apiKey) {
-      apiKey = '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';
-      console.log('Using hardcoded API key as fallback');
-    }
+    const apiKey = process.env.OPENROUTER_API_KEY || process.env.REACT_APP_OPENROUTER_API_KEY;
     
     if (!apiKey) {
       console.error('OpenRouter API key is missing');
