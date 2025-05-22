@@ -1,0 +1,98 @@
+{
+  "name": "OpenRouter Prompt",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": 1,
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "prompt",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "id": 2,
+      "name": "Prompt",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [200, 0]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "model",
+              "value": "openai/gpt-4o"
+            }
+          ]
+        }
+      },
+      "id": 3,
+      "name": "Model",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [400, 0]
+    },
+    {
+      "parameters": {
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "method": "POST",
+        "jsonParameters": true,
+        "headerParametersJson": "{\n  \"Authorization\": \"Bearer {{$env.OPENROUTER_API_KEY}}\",\n  \"Content-Type\": \"application/json\"\n}",
+        "bodyParametersJson": "{\n  \"model\": \"={{$json.model}}\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"={{$json.prompt}}\"\n    }\n  ]\n}"
+      },
+      "id": 4,
+      "name": "Send to OpenRouter",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [600, 0]
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prompt": {
+      "main": [
+        [
+          {
+            "node": "Model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Model": {
+      "main": [
+        [
+          {
+            "node": "Send to OpenRouter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
