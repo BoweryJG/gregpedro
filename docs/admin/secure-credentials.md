@@ -56,6 +56,8 @@ Environment variables should be set in the Netlify dashboard and in the `.env.lo
 
 - `OPENROUTER_API_KEY` - OpenRouter API key for AI chatbot
 - `INSTAGRAM_ACCESS_TOKEN` - Instagram API access token
+- `TWILIO_ACCOUNT_SID` - Twilio account SID for phone management
+- `TWILIO_AUTH_TOKEN` - Twilio auth token for phone management
 
 ## Security Practices
 

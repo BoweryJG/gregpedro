@@ -95,6 +95,8 @@ The following environment variables must be set in the Netlify dashboard:
 | Variable Name | Description | Required For |
 |---------------|-------------|-------------|
 | `OPENROUTER_API_KEY` | API key for OpenRouter | AI chatbot functionality |
+| `TWILIO_ACCOUNT_SID` | Twilio account SID | Twilio functions |
+| `TWILIO_AUTH_TOKEN` | Twilio auth token | Twilio functions |
 
 ### Setting Environment Variables
 
@@ -145,6 +147,12 @@ For example, the AI chat function would be accessible at:
 ```
 https://dr-greg-pedro.netlify.app/.netlify/functions/ai-chat
 ```
+
+The Twilio drgregpedro update function is available at:
+```
+https://dr-greg-pedro.netlify.app/.netlify/functions/update-twilio-drgregpedro
+```
+Send a POST request with `phoneNumberSid` and `drgregpedro` in the body to update a Twilio number.
 
 ### Accessing Functions from the Frontend
 
