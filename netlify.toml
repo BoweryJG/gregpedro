@@ -5,3 +5,7 @@
 [build.environment]
   NODE_VERSION = "18.16.0"
   NPM_VERSION = "9.5.1"
+
+# Define functions for backend proxy to OpenRouter
+[[functions]]
+  directory = "netlify/functions"

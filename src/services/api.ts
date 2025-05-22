@@ -14,7 +14,7 @@ const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || 'https://pedrobackend.
 /**
  * Generic function to make API requests
  */
-async function apiRequest<T = any>(
+export async function apiRequest<T = any>(
   endpoint: string,
   method: 'GET' | 'POST' | 'PUT' | 'DELETE' = 'GET',
   data?: any,
@@ -175,4 +175,16 @@ export const requestBeforeAfterPhotos = async (requestData: {
   procedure: 'implant' | 'tmj' | 'em-face' | 'other';
 }): Promise<ApiResponse> => {
   return apiRequest('/api/before-after-photos', 'POST', requestData);
+};
+
+/**
+ * Send a message to the AI chatbot via backend proxy to OpenRouter
+ */
+export const sendAIChatMessage = async (data: {
+  messages: Array<{role: 'system' | 'user' | 'assistant', content: string}>;
+  model?: string;
+  maxTokens?: number;
+  temperature?: number;
+}): Promise<ApiResponse<{message: string}>> => {
+  return apiRequest<{message: string}>('/api/ai/chat', 'POST', data);
 };

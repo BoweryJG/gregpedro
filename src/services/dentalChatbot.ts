@@ -1,6 +1,6 @@
 // Specialized Dental Chatbot for Dr. Pedro's practice
 // Focused on TMJ, EM face, dental implants, and Yomi robotic implant procedures
-// Powered by GPT-4o via OpenRouter
+// Now using backend proxy to OpenRouter for improved security
 
 interface ChatMessage {
   role: 'system' | 'user' | 'assistant';
@@ -43,8 +43,10 @@ Key Procedures:
    - Combined dental-aesthetic approaches
 `;
 
+import { sendAIChatMessage } from './api';
+
 /**
- * Generates a dental assistant response using GPT-4o through OpenRouter
+ * Generates a dental assistant response using GPT-4o through backend proxy to OpenRouter
  * with a Socratic and thoughtful tone
  */
 export const generateDentalResponse = async (
@@ -52,17 +54,6 @@ export const generateDentalResponse = async (
   conversationHistory: ChatMessage[] = []
 ): Promise<ChatResponse> => {
   try {
-    const apiKey = process.env.REACT_APP_OPENROUTER_API_KEY;
-    
-    if (!apiKey) {
-      console.error('OpenRouter API key is missing');
-      return {
-        success: false,
-        message: "I'm unable to connect to my knowledge base at the moment. Please contact our office directly for assistance.",
-        error: 'API key missing'
-      };
-    }
-
     // Build conversation with history, specialist knowledge, and style guidance
     const messages: ChatMessage[] = [
       {
@@ -94,29 +85,21 @@ export const generateDentalResponse = async (
       }
     ];
 
-    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
-        'HTTP-Referer': window.location.origin,
-      },
-      body: JSON.stringify({
-        model: 'openai/gpt-4o', // Using GPT-4o as requested
-        messages,
-        max_tokens: 500,
-        temperature: 0.7, // Balanced between creativity and consistency
-      }),
+    // Call our backend API instead of OpenRouter directly
+    const result = await sendAIChatMessage({
+      messages,
+      model: 'openai/gpt-4o',
+      maxTokens: 500,
+      temperature: 0.7
     });
 
-    if (!response.ok) {
-      throw new Error(`API error: ${response.status}`);
+    if (!result.success || !result.data) {
+      throw new Error(result.error || 'Unknown error');
     }
 
-    const data = await response.json();
     return {
       success: true,
-      message: data.choices[0].message.content
+      message: result.data.message
     };
   } catch (error) {
     console.error('Error generating dental assistant response:', error);

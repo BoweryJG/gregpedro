@@ -1,99 +1,70 @@
-# Staten Island Implant Dr - Website
+# Dr. Greg Pedro Dental Practice Website
 
-## Overview
+Modern React-based website for Dr. Greg Pedro's dental practice, featuring information about specialized services like Yomi robotic dental implants, TMJ treatments, and EM face procedures.
 
-This is the official website for Dr. Greg Pedro's dental practice, Staten Island Implant Dr. The website is built with React, Material UI, and integrates with Supabase for the backend and Open Router for AI functionality.
+## Architecture Overview
 
-## Features
+This project uses:
+- React with TypeScript
+- Material UI for component styling
+- React Router for navigation
+- Supabase for backend storage (optional)
+- Serverless functions for secure API communication
+- OpenRouter for AI chatbot functionality
 
-- **Modern UI**: Built with Material UI for a clean, professional design
-- **Responsive Design**: Optimized for all devices from mobile to desktop
-- **AI Chat Assistant**: Integrated with Open Router to provide patients with immediate responses to common questions
-- **Patient Portal**: Secure area for patients to access their information and communicate with the practice
-- **Appointment Booking**: Online scheduling system for patient convenience
-- **Treatment Information**: Detailed pages about dental services and procedures
-
-## Technology Stack
-
-- **Frontend**: React with TypeScript
-- **UI Framework**: Material UI
-- **Animations**: Framer Motion
-- **Routing**: React Router
-- **Backend**: Supabase (PostgreSQL, Authentication, Storage)
-- **AI Integration**: Open Router API
-- **Deployment**: Render
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or later)
-- npm or yarn
-- Supabase account
-- Open Router API key
-
-### Installation
+## Setup Instructions
 
 1. Clone the repository
-
-```bash
-git clone <repository-url>
-cd dr-greg-pedro-site
-```
-
-2. Install dependencies
-
-```bash
-npm install
-```
-
-3. Copy the provided `.env.example` file to `.env` and replace the placeholder values:
-
-```
-REACT_APP_SUPABASE_URL=<your_supabase_url>
-REACT_APP_SUPABASE_ANON_KEY=<your_supabase_anon_key>
-REACT_APP_OPENROUTER_API_KEY=<your_openrouter_api_key>
-```
-
-4. Start the development server
-
-```bash
-npm start
-```
-
-## Available Scripts
-
-- `npm start`: Runs the app in development mode
-- `npm test`: Launches the test runner
-- `npm run build`: Builds the app for production
-- `npm run eject`: Ejects from Create React App
-
-## Project Structure
-
-```
-src/
-├── components/      # Reusable UI components
-│   ├── AI/          # AI-related components
-│   ├── Layout/      # Layout components (Header, Footer)
-│   └── UI/          # UI components (ServiceCard, TestimonialCard, etc.)
-├── pages/           # Page components
-├── services/        # API and service integrations
-├── theme/           # Theme configuration
-├── utils/           # Utility functions
-├── hooks/           # Custom React hooks
-└── assets/          # Static assets
-```
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Create a `.env.local` file based on `.env.example`
+4. Run the development server:
+   ```
+   npm start
+   ```
 
 ## Deployment
 
-The website is configured for deployment on Render with a Supabase backend.
+This project is deployed on Netlify with serverless functions.
 
-## License
+### Environment Variables
 
-This project is proprietary and confidential. Unauthorized copying, distribution, or use is strictly prohibited.
+Set the following environment variables in your Netlify dashboard:
 
-## Contact
+- `OPENROUTER_API_KEY` - Your OpenRouter API key for AI chatbot functionality
 
-For any inquiries about this project, please contact:
+### Recent Changes
 
-- **Dr. Greg Pedro**: [info@statenislandimplantdr.com](mailto:info@statenislandimplantdr.com)
+#### Enhanced AI Chatbot Security
+
+The AI Chatbot now uses a serverless function to proxy requests to OpenRouter, improving security by:
+
+1. Removing API keys from frontend code
+2. Adding request validation in the serverless function
+3. Eliminating the need for middleware like Make.com or N8N
+
+#### API Structure
+
+The application now uses a simplified API structure:
+
+1. Frontend components call the API service
+2. API service calls Netlify serverless functions
+3. Serverless functions make secure calls to external services (OpenRouter)
+
+## Adding New Features
+
+### AI Chatbot
+
+The AI chatbot uses OpenRouter with GPT-4o to provide dental information. The flow works as follows:
+
+1. User sends a message through the chat interface
+2. Message is processed by `dentalChatbot.ts` which categorizes and enhances queries
+3. API request is sent to serverless function via the `api.ts` service
+4. Serverless function makes a secure request to OpenRouter
+5. Response is returned to the frontend and displayed to the user
+
+### Forms and Patient Information
+
+Patient forms (appointments, consultations, etc.) are handled through the API service.
