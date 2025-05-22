@@ -149,8 +149,16 @@ const EnhancedChatBot: React.FC = () => {
     } catch (error) {
       console.error('Error getting AI response:', error);
       
+      // Enhanced error message with more debugging information
+      let errorText = "I'm sorry, I'm having trouble connecting right now. Please try again later or contact our office directly at (347) 344-5806.";
+      
+      // For development environment, add more details
+      if (process.env.NODE_ENV === 'development') {
+        errorText += "\n\nDebug info: " + (error instanceof Error ? error.message : String(error));
+      }
+      
       const errorMessage: ChatMessage = {
-        text: "I'm sorry, I'm having trouble connecting right now. Please try again later or contact our office directly at (347) 344-5806.",
+        text: errorText,
         sender: 'bot',
         timestamp: new Date(),
         category: 'general'
@@ -242,6 +250,7 @@ const EnhancedChatBot: React.FC = () => {
   // Handle the collected user information
   const handleInfoCollection = async (input: string) => {
     setIsLoading(true);
+    console.log('Processing user information for:', infoType);
     
     try {
       const parts = input.split(',').map(part => part.trim());

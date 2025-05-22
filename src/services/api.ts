@@ -187,5 +187,23 @@ export const sendAIChatMessage = async (data: {
   maxTokens?: number;
   temperature?: number;
 }): Promise<ApiResponse<{message: string}>> => {
-  return apiRequest<{message: string}>('/api/ai/chat', 'POST', data);
+  try {
+    console.log('Sending AI chat message to', `${API_BASE_URL}/api/ai/chat`);
+    const response = await apiRequest<{message: string}>('/api/ai/chat', 'POST', data);
+    
+    // Log response for debugging
+    if (!response.success) {
+      console.error('AI chat message failed:', response.error);
+    } else {
+      console.log('AI chat message succeeded with data:', response.data);
+    }
+    
+    return response;
+  } catch (error) {
+    console.error('Error in sendAIChatMessage:', error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error in sendAIChatMessage'
+    };
+  }
 };

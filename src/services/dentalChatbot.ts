@@ -93,13 +93,22 @@ export const generateDentalResponse = async (
       temperature: 0.7
     });
 
-    if (!result.success || !result.data) {
+    if (!result.success) {
+      console.error('Error in AI response:', result.error);
       throw new Error(result.error || 'Unknown error');
+    }
+
+    // Handle both formats - data.message (new) or direct message (old)
+    const responseMessage = result.data?.message || (result.data as unknown as string);
+    
+    if (!responseMessage) {
+      console.error('No message in response:', result);
+      throw new Error('No message in response');
     }
 
     return {
       success: true,
-      message: result.data.message
+      message: responseMessage
     };
   } catch (error) {
     console.error('Error generating dental assistant response:', error);
