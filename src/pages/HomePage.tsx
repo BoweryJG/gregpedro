@@ -22,6 +22,7 @@ import {
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import ServiceCard from '../components/UI/ServiceCard';
+import ServicesCarousel from '../components/UI/ServicesCarousel';
 import TestimonialCard from '../components/UI/TestimonialCard';
 import { Link as RouterLink } from 'react-router-dom';
 
@@ -242,13 +243,7 @@ const HomePage: React.FC = () => {
             </Typography>
           </Box>
 
-          <Grid container spacing={4}>
-            {services.map((service, index) => (
-              <Grid item xs={12} sm={6} md={3} key={index}>
-                <ServiceCard {...service} />
-              </Grid>
-            ))}
-          </Grid>
+          <ServicesCarousel services={services} />
 
           <Box sx={{ textAlign: 'center', mt: 6 }}>
             <Button 
