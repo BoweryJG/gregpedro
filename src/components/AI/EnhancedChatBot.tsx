@@ -33,8 +33,7 @@ import {
   scheduleAppointment, 
   sendYomiInfo, 
   scheduleVirtualConsultation,
-  verifyInsuranceCoverage,
-  subscribeToContentSeries
+  verifyInsuranceCoverage
 } from '../../services/api';
 
 interface ChatMessage {
@@ -68,6 +67,8 @@ const EnhancedChatBot: React.FC = () => {
     }
   ]);
   const [isLoading, setIsLoading] = useState(false);
+  // We're tracking this info for potential future use
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [userInfo, setUserInfo] = useState<UserInfo>({});
   const [isCollectingInfo, setIsCollectingInfo] = useState(false);
   const [infoType, setInfoType] = useState<'appointment' | 'yomi-info' | 'consultation' | 'insurance' | null>(null);
