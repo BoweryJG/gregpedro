@@ -40,6 +40,17 @@ This section provides guidance for deploying and maintaining the website on Netl
 - Monitoring and debugging
 - Best practices for CI/CD, security, and monitoring
 
+### [4. Social Media Integration](./04-social-media.md)
+
+This section details Dr. Pedro's social media presence and how it's integrated with the website. Topics include:
+
+- Social media accounts management
+- Website integration points
+- Instagram feed implementation
+- Content strategy
+- Security considerations
+- Maintenance and updates
+
 ## Quick Start for Developers
 
 1. Clone the repository
