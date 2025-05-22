@@ -9,7 +9,8 @@ interface ApiResponse<T = any> {
 }
 
 // Base URL for backend API
-const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || 'https://pedrobackend.onrender.com';
+// Default to Netlify functions for local development/deployments
+const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || '/.netlify/functions';
 
 /**
  * Generic function to make API requests
