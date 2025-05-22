@@ -2,7 +2,7 @@
 
 ⚠️ **SECURITY WARNING** ⚠️
 
-This document contains sensitive credentials that should **NEVER** be committed to version control or shared publicly. This file should be:
+This document originally contained sensitive credentials that should **NEVER** be committed to version control or shared publicly. All actual values have been replaced with placeholders. Credentials must be stored securely outside of source control. This file should be:
 
 1. Stored in a secure location
 2. Accessible only to authorized personnel
@@ -15,7 +15,7 @@ This document contains sensitive credentials that should **NEVER** be committed 
 
 - **Account**: @gregpedromd
 - **Username**: gregpedromd
-- **Password**: PedroGold2025
+- **Password**: PASSWORD_HERE
 - **Email**: [Add email associated with account]
 - **Recovery Phone**: [Add recovery phone]
 
