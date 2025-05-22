@@ -11,7 +11,9 @@ export interface Service {
 }
 
 export const services: Service[] = [
-      title: 'Dental Implants',
+  {
+    id: 'dental-implants',
+    title: 'Dental Implants',
       shortDescription: 'Replace missing teeth with permanent, natural-looking dental implants crafted by Dr. Pedro.',
       fullDescription: 'Dental implants are titanium posts surgically placed into the jawbone beneath your gums to provide a stable foundation for artificial teeth. With Dr. Pedro\'s artistic eye and championship-level precision, these implants offer a long-term solution for missing teeth while preserving facial structure and preventing bone deterioration. As an ADA-Certified Prosthodontist with over 30 years of experience, Dr. Pedro brings unparalleled expertise to every implant procedure.',
       image: '/images/services/dental-implants.jpg',
