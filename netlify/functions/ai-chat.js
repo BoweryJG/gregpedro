@@ -4,10 +4,21 @@
 const fetch = require('node-fetch');
 
 exports.handler = async (event, context) => {
+  const corsHeaders = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS'
+  };
+
+  if (event.httpMethod === 'OPTIONS') {
+    return { statusCode: 200, headers: corsHeaders, body: '' };
+  }
+
   // Only allow POST requests
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
+      headers: corsHeaders,
       body: JSON.stringify({ success: false, error: 'Method Not Allowed' })
     };
   }
@@ -21,6 +32,7 @@ exports.handler = async (event, context) => {
     if (!messages || !Array.isArray(messages)) {
       return {
         statusCode: 400,
+        headers: corsHeaders,
         body: JSON.stringify({ success: false, error: 'Messages array is required' })
       };
     }
@@ -31,9 +43,10 @@ exports.handler = async (event, context) => {
       console.error('OpenRouter API key is missing');
       return {
         statusCode: 500,
-        body: JSON.stringify({ 
-          success: false, 
-          error: 'Server configuration error' 
+        headers: corsHeaders,
+        body: JSON.stringify({
+          success: false,
+          error: 'Server configuration error'
         })
       };
     }
@@ -61,8 +74,9 @@ exports.handler = async (event, context) => {
       console.error('OpenRouter API error:', errorText);
       return {
         statusCode: response.status,
-        body: JSON.stringify({ 
-          success: false, 
+        headers: corsHeaders,
+        body: JSON.stringify({
+          success: false,
           error: `API error: ${response.status}`
         })
       };
@@ -73,9 +87,7 @@ exports.handler = async (event, context) => {
     // Return the AI message
     return {
       statusCode: 200,
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       body: JSON.stringify({
         success: true,
         message: data.choices[0].message.content
@@ -86,8 +98,9 @@ exports.handler = async (event, context) => {
     console.error('Error handling request:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ 
-        success: false, 
+      headers: corsHeaders,
+      body: JSON.stringify({
+        success: false,
         error: error.message || 'Internal Server Error'
       })
     };

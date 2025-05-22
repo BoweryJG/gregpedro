@@ -48,7 +48,7 @@ graph TD
   - **Layout Components**: Header, Footer, overall page layout
   - **UI Components**: Reusable elements like ServiceCard, TestimonialCard, HeroSection
   - **Page Components**: HomePage, ServicesPage, ContactPage, etc.
-  - **AI Components**: ChatBot and EnhancedChatBot for interactive patient communication
+  - **AI Components**: EnhancedChatBot for interactive patient communication
 
 ### API Layer
 

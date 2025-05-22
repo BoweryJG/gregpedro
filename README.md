@@ -24,6 +24,7 @@ This project uses:
 - Supabase for backend storage (optional)
 - Serverless functions for secure API communication
 - OpenRouter for AI chatbot functionality
+- EnhancedChatBot component for the secure chat interface
 
 ### Detailed Architecture Explanation
 
@@ -87,6 +88,10 @@ Patient forms (appointments, consultations, etc.) are handled through the API se
 ### Visual Aids
 
 Consider adding diagrams or flowcharts to illustrate the architecture and workflows.
+
+### Twilio Phone Management
+
+The site includes a serverless function to update a Twilio phone number's label. Send a POST request to `/.netlify/functions/update-twilio-drgregpedro` with `phoneNumberSid` and `drgregpedro` fields.
 
 ## Contribution Guidelines
 

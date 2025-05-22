@@ -2,7 +2,7 @@
 
 ⚠️ **SECURITY WARNING** ⚠️
 
-This document contains sensitive credentials that should **NEVER** be committed to version control or shared publicly. This file should be:
+This document originally contained sensitive credentials that should **NEVER** be committed to version control or shared publicly. All actual values have been replaced with placeholders. Credentials must be stored securely outside of source control. This file should be:
 
 1. Stored in a secure location
 2. Accessible only to authorized personnel
@@ -15,7 +15,7 @@ This document contains sensitive credentials that should **NEVER** be committed 
 
 - **Account**: @gregpedromd
 - **Username**: gregpedromd
-- **Password**: PedroGold2025
+- **Password**: PASSWORD_HERE
 - **Email**: [Add email associated with account]
 - **Recovery Phone**: [Add recovery phone]
 
@@ -56,6 +56,8 @@ Environment variables should be set in the Netlify dashboard and in the `.env.lo
 
 - `OPENROUTER_API_KEY` - OpenRouter API key for AI chatbot
 - `INSTAGRAM_ACCESS_TOKEN` - Instagram API access token
+- `TWILIO_ACCOUNT_SID` - Twilio account SID for phone management
+- `TWILIO_AUTH_TOKEN` - Twilio auth token for phone management
 
 ## Security Practices
 
