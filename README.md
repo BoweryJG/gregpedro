@@ -2,6 +2,10 @@
 
 Modern React-based website for Dr. Greg Pedro's dental practice, featuring information about specialized services like Yomi robotic dental implants, TMJ treatments, and EM face procedures.
 
+## Purpose
+
+This website aims to provide comprehensive information about Dr. Greg Pedro's dental services, emphasizing the cutting-edge Yomi robotic technology for dental implants, which offers greater precision and faster recovery times.
+
 ## Documentation
 
 Comprehensive documentation is available in the `/docs` directory:
@@ -21,6 +25,15 @@ This project uses:
 - Serverless functions for secure API communication
 - OpenRouter for AI chatbot functionality
 
+### Detailed Architecture Explanation
+
+- **React with TypeScript**: Provides a robust framework for building interactive user interfaces with type safety.
+- **Material UI**: Ensures consistent and modern styling across components.
+- **React Router**: Manages navigation and routing within the application.
+- **Supabase**: Optional backend storage for managing patient data securely.
+- **Serverless Functions**: Enables secure communication with external services without exposing API keys.
+- **OpenRouter**: Powers the AI chatbot, providing users with instant dental information.
+
 ## Setup Instructions
 
 1. Clone the repository
@@ -34,6 +47,11 @@ This project uses:
    npm start
    ```
 
+### Common Setup Issues & Solutions
+
+- **Missing Dependencies**: Ensure all dependencies are installed by running `npm install`.
+- **Environment Variables**: Double-check the `.env.local` file for any missing or incorrect variables.
+
 ## Deployment
 
 This project is deployed on Netlify with serverless functions.
@@ -44,23 +62,11 @@ Set the following environment variables in your Netlify dashboard:
 
 - `OPENROUTER_API_KEY` - Your OpenRouter API key for AI chatbot functionality
 
-### Recent Changes
+### Deployment Process
 
-#### Enhanced AI Chatbot Security
-
-The AI Chatbot now uses a serverless function to proxy requests to OpenRouter, improving security by:
-
-1. Removing API keys from frontend code
-2. Adding request validation in the serverless function
-3. Eliminating the need for middleware like Make.com or N8N
-
-#### API Structure
-
-The application now uses a simplified API structure:
-
-1. Frontend components call the API service
-2. API service calls Netlify serverless functions
-3. Serverless functions make secure calls to external services (OpenRouter)
+1. Commit your changes to the main branch.
+2. Netlify will automatically build and deploy the changes.
+3. Monitor the deployment status in the Netlify dashboard.
 
 ## Adding New Features
 
@@ -77,3 +83,18 @@ The AI chatbot uses OpenRouter with GPT-4o to provide dental information. The fl
 ### Forms and Patient Information
 
 Patient forms (appointments, consultations, etc.) are handled through the API service.
+
+### Visual Aids
+
+Consider adding diagrams or flowcharts to illustrate the architecture and workflows.
+
+## Contribution Guidelines
+
+- Follow the coding standards outlined in the [Coding Standards](./docs/coding-standards.md) document.
+- Ensure all new features are accompanied by tests.
+- Submit pull requests for any changes, and ensure they pass all CI checks before merging.
+
+## Troubleshooting
+
+- **Deployment Failures**: Check the Netlify logs for any build errors.
+- **API Errors**: Ensure serverless functions are correctly configured and API keys are valid.
