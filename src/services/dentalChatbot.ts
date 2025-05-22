@@ -2,6 +2,8 @@
 // Focused on TMJ, EM face, dental implants, and Yomi robotic implant procedures
 // Now using backend proxy to OpenRouter for improved security
 
+import { sendAIChatMessage } from './api';
+
 interface ChatMessage {
   role: 'system' | 'user' | 'assistant';
   content: string;
@@ -42,8 +44,6 @@ Key Procedures:
    - Non-surgical facial enhancement
    - Combined dental-aesthetic approaches
 `;
-
-import { sendAIChatMessage } from './api';
 
 /**
  * Generates a dental assistant response using GPT-4o through backend proxy to OpenRouter
