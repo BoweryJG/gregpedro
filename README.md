@@ -77,3 +77,7 @@ The AI chatbot uses OpenRouter with GPT-4o to provide dental information. The fl
 ### Forms and Patient Information
 
 Patient forms (appointments, consultations, etc.) are handled through the API service.
+
+### Twilio Phone Management
+
+The site includes a serverless function to update a Twilio phone number's label. Send a POST request to `/.netlify/functions/update-twilio-drgregpedro` with `phoneNumberSid` and `drgregpedro` fields.
