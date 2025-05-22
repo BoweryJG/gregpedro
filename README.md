@@ -20,6 +20,7 @@ This project uses:
 - Supabase for backend storage (optional)
 - Serverless functions for secure API communication
 - OpenRouter for AI chatbot functionality
+- EnhancedChatBot component for the secure chat interface
 
 ## Setup Instructions
 
