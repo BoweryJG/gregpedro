@@ -2,6 +2,15 @@
 
 Modern React-based website for Dr. Greg Pedro's dental practice, featuring information about specialized services like Yomi robotic dental implants, TMJ treatments, and EM face procedures.
 
+## Documentation
+
+Comprehensive documentation is available in the `/docs` directory:
+
+- [System Architecture](./docs/01-system-architecture.md)
+- [AI Integration](./docs/02-ai-integration.md)
+- [Netlify Deployment](./docs/03-netlify-deployment.md)
+- [Documentation Index](./docs/index.md)
+
 ## Architecture Overview
 
 This project uses:
