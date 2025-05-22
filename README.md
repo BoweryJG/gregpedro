@@ -47,12 +47,12 @@ cd dr-greg-pedro-site
 npm install
 ```
 
-3. Create a `.env` file in the root directory with the following variables:
+3. Copy the provided `.env.example` file to `.env` and replace the placeholder values:
 
 ```
-REACT_APP_SUPABASE_URL=your_supabase_url
-REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
-REACT_APP_OPENROUTER_API_KEY=your_openrouter_api_key
+REACT_APP_SUPABASE_URL=<your_supabase_url>
+REACT_APP_SUPABASE_ANON_KEY=<your_supabase_anon_key>
+REACT_APP_OPENROUTER_API_KEY=<your_openrouter_api_key>
 ```
 
 4. Start the development server

@@ -6,10 +6,11 @@ import {
   Button, 
   Box, 
   IconButton, 
-  Drawer, 
-  List, 
-  ListItem, 
+  Drawer,
+  List,
+  ListItem,
   ListItemButton,
+  ListItemIcon,
   Container,
   useTheme
 } from '@mui/material';
@@ -327,6 +328,9 @@ const Header: React.FC = () => {
                     borderBottom: '1px solid rgba(229,231,235,0.5)',
                   }}
                 >
+                  <ListItemIcon sx={{ minWidth: 36 }}>
+                    {React.createElement(item.icon, { sx: { color: 'inherit' } })}
+                  </ListItemIcon>
                   {item.text}
                 </ListItemButton>
               </ListItem>
