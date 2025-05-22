@@ -24,11 +24,12 @@ import {
   AccessTime as TimeIcon 
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
+import { submitContactForm, ContactFormData } from '../services/contact';
 
 const ContactPage: React.FC = () => {
   const theme = useTheme();
   
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     firstName: '',
     lastName: '',
     email: '',
@@ -60,30 +61,38 @@ const ContactPage: React.FC = () => {
     }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // In a real application, this would send the form data to the server
-    // For now, we'll just show a success message
-    console.log('Form submitted:', formData);
-    
-    // Show success message
-    setSnackbar({
-      open: true,
-      message: 'Your message has been sent! We will contact you shortly.',
-      severity: 'success'
-    });
-    
-    // Reset form
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      message: '',
-      contactPreference: 'email',
-      appointmentType: 'consultation'
-    });
+
+    try {
+      const { error } = await submitContactForm(formData);
+      if (error) {
+        throw error;
+      }
+
+      setSnackbar({
+        open: true,
+        message: 'Your message has been sent! We will contact you shortly.',
+        severity: 'success'
+      });
+
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: '',
+        contactPreference: 'email',
+        appointmentType: 'consultation'
+      });
+    } catch (err) {
+      console.error('Error submitting form:', err);
+      setSnackbar({
+        open: true,
+        message: 'There was an error sending your message. Please try again.',
+        severity: 'error'
+      });
+    }
   };
   
   const handleCloseSnackbar = () => {
