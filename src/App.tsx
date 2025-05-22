@@ -13,7 +13,7 @@ import ContactPage from './pages/ContactPage';
 import YomiTechnologyPage from './pages/YomiTechnologyPage';
 
 // AI Components
-import ChatBot from './components/AI/ChatBot';
+import EnhancedChatBot from './components/AI/EnhancedChatBot';
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
             {/* Add more routes as needed */}
             <Route path="*" element={<HomePage />} />
           </Routes>
-          <ChatBot />
+          <EnhancedChatBot />
         </Layout>
       </Router>
     </ThemeProvider>
